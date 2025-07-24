@@ -1,0 +1,89 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: #fff8f0;
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+}
+
+.profile-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.profile-card {
+  background: #ffffff;
+  border: 2px solid #ff7a00;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+}
+
+.logo-sliced {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff7a00;
+  margin-bottom: 1rem;
+}
+
+.logo-sliced span {
+  color: #000;
+}
+
+.profile-icon {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+}
+
+.profile-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.profile-info {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.profile-info label {
+  font-weight: 600;
+  color: #ff7a00;
+  margin-right: 0.3rem;
+}
+
+.logout-card {
+  background-color: #ff7a00;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding-top: 3rem;
+}
+
+.logout-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.logout-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.logout-info {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}

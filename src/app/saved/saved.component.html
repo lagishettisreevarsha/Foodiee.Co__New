@@ -1,0 +1,9 @@
+<h2 class="page-title">💾 Your Saved Recipes</h2>
+
+<div class="food-grid">
+  <div *ngFor="let item of savedItems" class="food-card">
+    <img [src]="item.image" alt="{{ item.title }}" />
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.description.split('\n')[0] }}</p>
+  </div>
+</div>

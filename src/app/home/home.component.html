@@ -1,0 +1,66 @@
+<!-- Navbar -->
+<nav class="home-navbar">
+  <div class="logo">
+    <img src="https://i.pinimg.com/736x/d2/56/8c/d2568c83e1edc3c7a5b9aaf6b575f7d9.jpg" alt="Foodiee Logo" class="logo-img" />
+    Foodiee<span>.co</span>
+  </div>
+
+  <div class="nav-actions">
+    <span class="nav-icon" (click)="goToSaved()" title="Saved Recipes">💾</span>
+    <button class="nav-icon" title="Upload Recipe" (click)="goToUpload()">📤</button>
+    <span class="nav-icon" (click)="goToFavourites()" title="Favourited Recipes">❤️</span>
+    <span class="nav-icon" (click)="goToProfile()" title="Your Profile">👤</span>
+    
+  </div>
+ 
+  <div class="auth-mock-buttons">
+  <button class="auth-btn login" (click)="mockLogin()">Mock Login (Premium)</button>
+  <button class="auth-btn logout" (click)="mockLogout()">Logout</button>
+</div>
+
+
+</nav>
+
+<!-- Main Content -->
+<div class="home-container">
+  <div class="home-content">
+    <!-- Search -->
+    <div class="search-filter-bar">
+      <input type="text" placeholder="Search recipes..." [(ngModel)]="searchQuery" />
+    </div>
+
+    <!-- Category Filter -->
+    <div class="category-toggles">
+      <button
+        *ngFor="let c of allCategories"
+        (click)="selectCategory(c)"
+        [ngClass]="{
+          active: selectedCategory === (c.name || c) || (!selectedCategory && (c.name || c) === 'All')
+        }"
+      >
+        {{ c.name || c }}
+      </button>
+    </div>
+
+    <!-- Food Cards -->
+    <div class="food-grid">
+      <div class="food-card" *ngFor="let item of filteredItems()" (click)="goToFoodDetail(item.id)">
+        <img [src]="item.image" alt="{{ item.title }}" />
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description.split('\n')[0] }}</p>
+
+        <div class="card-actions">
+          <button (click)="toggleSave(item.id); $event.stopPropagation()">
+            {{ isSaved(item.id) ? '💾 Saved' : '💾 Save' }}
+          </button>
+          <button (click)="toggleFavorite(item.id); $event.stopPropagation()">
+            {{ isFavorited(item.id) ? '❤️ Favourited' : '🤍 Favourite' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chatbot -->
+<button class="chatbot-toggle-btn" (click)="goToChatbot()">💬</button>

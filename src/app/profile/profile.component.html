@@ -1,0 +1,34 @@
+<div class="profile-container">
+  <div class="profile-card-grid">
+    
+    <!-- Info Card -->
+    <div class="profile-card">
+      <div class="logo-sliced">Foodiee.<span>co</span></div>
+      <div class="profile-icon">👤</div>
+      <div class="profile-title">Your Profile</div>
+
+      <p class="profile-info">
+        <label>Email:</label>
+        <span>{{ user?.email }}</span>
+      </p>
+
+      <p class="profile-info">
+        <label>Joined:</label>
+        <span>{{ user?.joined | date: 'fullDate' }}</span>
+      </p>
+
+      <p class="profile-info">
+        <label>Status:</label>
+        <span>{{ user?.isPremium ? 'Premium User ⭐' : 'Free User' }}</span>
+      </p>
+    </div>
+
+    <!-- Logout Card -->
+    <div class="profile-card logout-card" (click)="logout()">
+      <div class="logout-icon">🚪</div>
+      <div class="logout-title">Logout</div>
+      <p class="logout-info">Sign out from your Premium Foodiee account.</p>
+    </div>
+
+  </div>
+</div>

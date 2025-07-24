@@ -1,0 +1,23 @@
+<div class="chatbot-overlay">
+  <div class="chatbot-page">
+    <div class="chatbot-header">
+      <button class="back-btn" (click)="goBack()">← Back</button>
+      <span>🍳 Foodiee Bot</span>
+    </div>
+
+    <div class="chat-window">
+      <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+        {{ msg.text }}
+      </div>
+    
+      <div *ngIf="isTyping" class="typing-indicator">Foodiee Bot is typing...</div>
+      
+      <div #chatEnd></div>
+    </div>
+
+    <input
+      [(ngModel)]="userInput"
+      (keyup.enter)="sendMessage()"
+      placeholder="Enter ingredients or 'surprise me'..." />
+  </div>
+</div>

@@ -1,0 +1,347 @@
+{
+  "foods": [
+   {
+      "id": 1,
+      "title": "Pancakes",
+      "description": "**Fluffy pancakes topped with maple syrup and berries.**\n\n- Whisk together flour, baking powder, sugar, and a pinch of salt.\n- In another bowl, mix milk, eggs, and melted butter.\n- Combine both mixtures to form a smooth batter.\n- Heat a non-stick pan and pour batter to form pancakes.\n- Flip once bubbles form and cook until golden.\n- Serve with maple syrup and fresh berries.",
+      "category": "Breakfast",
+      "image": "https://i.pinimg.com/736x/db/cf/e8/dbcfe8fc0888740fb884c860f799c3cd.jpg",
+      "ingredients": ["Flour", "Eggs", "Milk", "Baking powder", "Maple syrup", "Berries"],
+      "video": "https://rr3---sn-cvh7knle.googlevideo.com/videoplayback?expire=1751978029&ei=zLtsaO6COcGKvdIPqNi0sAo&ip=62.72.178.157&id=o-ADjNgk_IdChlbY3Zuw_hgphyKawgzA0qVWMKtGP3_U5L&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&rms=au%2Cau&siu=1&bui=AY1jyLNWI9VHHvo0YBm8V0f7cbK4OX2oSn6yR_xoo5g-efFxExjgA-ImHIJfGIITd2BIaKiD&spc=l3OVKWvCnca_UwnQOAt0&vprv=1&svpuc=1&mime=video%2Fmp4&ns=J1ue7c8ZrQSSdbid8kmiTr4Q&rqh=1&cnr=14&ratebypass=yes&dur=152.508&lmt=1738709556702345&c=TVHTML5_SIMPLY_EMBEDDED_PLAYER&sefc=1&txp=4538534&n=MOQmOlnpKjvsQg&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Csiu%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRgIhAPxy2C-OJDqxRfOOWp2C77hTuDIZ5CJYqGb0Gf8J_58HAiEA6cO5NlcAW8j14W6g5-nNa-Cqi1UJpIIEOSKpmDMynHk%3D&title=How+to+Make+Pancakes+at+Home+%7C+Easy+Pancake+Recipe&redirect_counter=1&rm=sn-25grl7l&rrc=104&fexp=24350590,24350737,24350827,24350961,24351316,24351318,24351528,24351907,24352220,24352236,24352309,24352311,24352322,24352334,24352336,24352394,24352396,24352456,24352460,24352466,24352468,24352517,24352519,24352535,24352537&req_id=bcbbfbde4613a3ee&cms_redirect=yes&ipbypass=yes&met=1751956437,&mh=Ka&mip=49.249.8.90&mm=31&mn=sn-cvh7knle&ms=au&mt=1751956155&mv=m&mvi=3&pl=21&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRQIgNnahsZCwqNqWvBmWJbsukoIWAIRn7Ax2R9zgwoViFhwCIQCeKcmTdN2y-neOJXZ4yTEUxN-1P-5Bh49XTQEypU0v9A%3D%3D"
+
+    },
+    {
+      "id": 2,
+      "title": "Omelette",
+      "description": "**Cheese and veggie-loaded omelette.**\n\n- Crack eggs into a bowl, add salt and pepper, and whisk well.\n- Heat a pan with oil or butter.\n- Add chopped bell peppers and onions, sauté for a minute.\n- Pour in the eggs and let them set.\n- Sprinkle grated cheese on top.\n- Fold and cook till golden, then serve hot.",
+      "category": "Breakfast",
+      "image": "https://i.pinimg.com/736x/76/38/b1/7638b1a73552df2de22dfe10e1572073.jpg",
+      "ingredients": ["Eggs", "Cheese", "Bell peppers", "Onions", "Salt", "Pepper"],
+      "video":"https://rr3---sn-5hne6n6l.googlevideo.com/videoplayback?expire=1751978663&ei=R75saMiuMIPBmLAP0vqjgQE&ip=45.140.244.223&id=o-ACXlxfy79ughsHIOnIJz8LHb30txktdoPjM_nGBtCRdQ&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&siu=1&bui=AY1jyLONIC-F54t7p25W9_u-pP4zP_68yoPH8jQukn4OT1m9aETIq_TNsJNNPjPEjRYaEgnjdA&spc=l3OVKarY2WYKillhcvod&vprv=1&svpuc=1&mime=video%2Fmp4&ns=6wiy7km2ZaL2NfKOeBUDrj4Q&rqh=1&cnr=14&ratebypass=yes&dur=104.257&lmt=1708779995103687&c=TVHTML5_SIMPLY_EMBEDDED_PLAYER&sefc=1&txp=4538434&n=30av-42NtO_bSw&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Csiu%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRAIgLhtFNn-yBHaFxsehVEiqR7dyUP_rsxTtvQMLR77aBmICIH6SIReIW1iOLHNXTUl7vxCpk-i5y5_T3QhQvyBIDwZG&title=Masala+Omelette%2F+Spicy+Omelet+Recipe&redirect_counter=1&cm2rm=sn-25grk7s&rrc=80&fexp=24350590,24350737,24350827,24350961,24351316,24351318,24351528,24351907,24352220,24352236,24352322,24352334,24352335,24352370,24352394,24352396,24352456,24352460,24352466,24352467,24352517,24352519&req_id=bab9d41ca381a3ee&cms_redirect=yes&cmsv=e&met=1751957070,&mh=zD&mip=49.249.8.90&mm=34&mn=sn-5hne6n6l&ms=ltu&mt=1751955493&mv=D&mvi=3&pl=0&rms=ltu,au&lsparams=met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRQIhAIp0O3VCEt4Jgw-fjaBJWPHkI877hwpQBCohd-UjiICGAiAHaEiFebl2mmUB2JonmndcZ2y5TgjKd12XaH1_4CamRA%3D%3D"
+      },
+    {
+      "id": 3,
+      "title": "Avocado Toast",
+      "description": "**Crunchy toast topped with creamy seasoned avocado.**\n\n- Toast slices of bread to desired crispness.\n- Scoop out ripe avocados into a bowl.\n- Mash with lemon juice, salt, and chili flakes.\n- Spread the avocado mix over toast.\n- Garnish with extra chili flakes or herbs if desired.",
+      "category": "Breakfast",
+      "image": "https://i.pinimg.com/736x/15/1e/ef/151eef778a3480c6fabdb948a10fb7b9.jpg",
+      "ingredients": ["Bread", "Avocado", "Lemon", "Salt", "Chili flakes"]
+    },
+    {
+      "id": 4,
+      "title": "Grilled Cheese Sandwich",
+      "description": "**Golden crispy sandwich with gooey melted cheese.**\n\n- Butter two slices of bread evenly on one side.\n- Place cheese slices between the unbuttered sides.\n- Heat a pan and grill until golden on both sides.\n- Press gently for even melting.\n- Slice and serve hot.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/80/30/72/8030727314b1b950376d0dc83e249add.jpg",
+      "ingredients": ["Bread", "Cheddar cheese", "Butter"]
+    },
+    {
+      "id": 5,
+      "title": "Chicken Burger",
+      "description": "**Juicy grilled chicken burger with crisp veggies.**\n\n- Grill or pan-fry chicken patty until fully cooked.\n- Lightly toast burger buns.\n- Spread mayo on both sides of the bun.\n- Add lettuce, tomato slices, and the chicken patty.\n- Assemble and serve with fries or salad.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/3d/72/bc/3d72bc224939ece8783abd2c3344e46f.jpg",
+      "ingredients": ["Chicken patty", "Burger bun", "Lettuce", "Tomato", "Mayonnaise"]
+    },
+    {
+      "id": 6,
+      "title": "Veggie Wrap",
+      "description": "**Healthy wrap packed with grilled veggies and hummus.**\n\n- Warm tortillas on a pan.\n- Grill bell peppers and zucchini until tender.\n- Spread hummus on the tortilla.\n- Add grilled veggies and lettuce.\n- Roll tightly into a wrap and serve sliced.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/3e/14/53/3e1453c708c27e90332df05aee03ce75.jpg",
+      "ingredients": ["Tortilla", "Bell peppers", "Zucchini", "Hummus", "Lettuce"]
+    },
+    {
+      "id": 7,
+      "title": "Spaghetti Bolognese",
+      "description": "**Classic Italian pasta with hearty meat sauce.**\n\n- Boil spaghetti until al dente, drain and set aside.\n- Sauté onions and garlic in olive oil.\n- Add ground beef and cook till browned.\n- Pour in tomato sauce and simmer.\n- Combine with spaghetti and serve hot with herbs or parmesan.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/e1/41/b9/e141b90cf7bfef38bb0da9838ef7921a.jpg",
+      "ingredients": ["Spaghetti", "Ground beef", "Tomato sauce", "Onions", "Garlic"]
+    },
+    {
+      "id": 8,
+      "title": "Butter Chicken",
+      "description": "**Rich and creamy Indian-style butter chicken.**\n\n- Marinate chicken in yogurt and spices.\n- Cook chicken until slightly charred.\n- Prepare sauce with butter, tomato puree, and cream.\n- Add chicken into the sauce and simmer.\n- Serve with naan or rice.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/e4/ee/46/e4ee465f7c751cf7cd10fc00fc875679.jpg",
+      "ingredients": ["Chicken", "Butter", "Tomato puree", "Cream", "Spices"]
+    },
+    {
+      "id": 9,
+      "title": "Margarita Pizza",
+      "description": "**Classic thin-crust pizza with tomato, mozzarella, and basil.**\n\n- Roll out pizza dough and spread tomato sauce.\n- Add mozzarella slices evenly.\n- Bake in a hot oven until crust is golden.\n- Top with fresh basil and a drizzle of olive oil.\n- Slice and serve hot.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/57/e7/a1/57e7a19334571946391a7430fcb86202.jpg",
+      "ingredients": ["Pizza dough", "Tomato sauce", "Mozzarella", "Basil"]
+    },
+    {
+      "id": 10,
+      "title": "Chocolate Cake",
+      "description": "**Moist chocolate sponge with rich cocoa flavor.**\n\n- Mix flour, cocoa powder, and sugar in a bowl.\n- Add eggs, melted butter, and milk to form batter.\n- Pour into a greased baking tin.\n- Bake until a toothpick comes out clean.\n- Frost with chocolate icing if desired.",
+      "category": "Dessert",
+      "image": "https://i.pinimg.com/736x/f2/c9/a4/f2c9a4f119aaa41b5b790a1effa8a791.jpg",
+      "ingredients": ["Flour", "Cocoa powder", "Sugar", "Eggs", "Butter", "Chocolate"]
+    },
+    {
+      "id": 11,
+      "title": "Ice Cream Sundae",
+      "description": "**Delicious ice cream topped with syrup, nuts, and whipped cream.**\n\n- Scoop 2–3 flavors of ice cream into a bowl.\n- Drizzle chocolate or caramel syrup generously.\n- Add whipped cream on top.\n- Sprinkle chopped nuts.\n- Optionally top with a cherry.",
+      "category": "Dessert",
+      "image": "https://i.pinimg.com/736x/4c/ce/cb/4ccecbda1a3804d2b65b90b862b3ca4c.jpg",
+      "ingredients": ["Vanilla ice cream", "Chocolate syrup", "Chopped nuts", "Whipped cream"]
+    },
+    {
+      "id": 12,
+      "title": "Fruit Salad",
+      "description": "**Refreshing medley of seasonal fruits.**\n\n- Chop apple, banana, mango, pineapple, and grapes.\n- Add them to a bowl with a dash of lemon juice.\n- Sprinkle mint leaves and mix well.\n- Chill for 15 minutes before serving.",
+      "category": "Dessert",
+      "image": "https://i.pinimg.com/736x/a7/8d/db/a78ddb9404fb7777ff950932a15a967b.jpg",
+      "ingredients": ["Apple", "Banana", "Mango", "Pineapple", "Grapes", "Mint"]
+    },
+    {
+      "id": 13,
+      "title": "Nachos",
+      "description": "**Crispy nachos loaded with cheese and toppings.**\n\n- Spread tortilla chips on a baking tray.\n- Top with grated cheese and jalapeños.\n- Bake until cheese melts.\n- Serve with salsa and sour cream on the side.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/90/39/62/90396229334f0093da70943cc29613ef.jpg",
+      "ingredients": ["Tortilla chips", "Cheddar cheese", "Jalapeños", "Salsa", "Sour cream"]
+    },
+    {
+      "id": 14,
+      "title": "Smoothie Bowl",
+      "description": "**Thick smoothie base topped with crunchy toppings.**\n\n- Blend banana, mixed berries, and yogurt into a thick smoothie.\n- Pour into a bowl.\n- Top with granola, chia seeds, and extra fruit slices.\n- Serve cold with a spoon.",
+      "category": "Breakfast",
+      "image": "https://i.pinimg.com/736x/dd/96/71/dd9671e9d04ebcd9e153b15c582b5bfd.jpg",
+      "ingredients": ["Banana", "Mixed berries", "Yogurt", "Granola", "Chia seeds"]
+    },
+    {
+      "id": 15,
+      "title": "Sushi Rolls",
+      "description": "**Delicate rolls filled with seafood and veggies.**\n\n- Lay nori sheet on a mat and spread sushi rice.\n- Add avocado, crab meat, and cucumber.\n- Roll tightly using a sushi mat.\n- Slice into bite-sized pieces.\n- Serve with soy sauce and wasabi.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/e1/1b/83/e11b838229539c658deb28134ef7379c.jpg",
+      "ingredients": ["Sushi rice", "Nori", "Avocado", "Crab meat", "Cucumber", "Soy sauce", "Wasabi"]
+    },
+    {
+      "id": 16,
+      "title": "Tacos",
+      "description": "**Crunchy or soft tortillas filled with flavorful meat and veggies.**\n\n- Cook meat (beef or chicken) with taco seasoning.\n- Warm up the tortillas.\n- Add lettuce, tomatoes, cheese, and cooked meat.\n- Drizzle with salsa or sour cream.\n- Serve immediately.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/f5/20/10/f52010f1acafbe3969cc567c41d44865.jpg",
+      "ingredients": ["Tortillas", "Beef or chicken", "Lettuce", "Tomato", "Cheese", "Salsa"]
+    },
+    {
+      "id": 17,
+      "title": "Garlic Bread",
+      "description": "**Toasty bread slices infused with garlic butter.**\n\n- Mix butter with minced garlic and chopped parsley.\n- Spread mixture on bread slices.\n- Bake until golden and crisp.\n- Serve hot with pasta or soup.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/4f/09/22/4f0922594cf2910bfbb6dae58af75603.jpg",
+      "ingredients": ["Bread", "Garlic", "Butter", "Parsley"]
+    },
+    {
+      "id": 18,
+      "title": "Falafel Bowl",
+      "description": "**A nutritious bowl with falafel, veggies, and tahini.**\n\n- Prepare falafel or use store-bought.\n- Cook rice and arrange in a bowl.\n- Add falafel, cucumbers, tomatoes, and lettuce.\n- Drizzle with tahini sauce and enjoy.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/53/42/81/534281aa0d71567a45fe5ec6ea958a56.jpg",
+      "ingredients": ["Falafel", "Rice", "Cucumber", "Tomatoes", "Tahini sauce", "Lettuce"]
+    },
+    {
+      "id": 19,
+      "title": "Pasta Alfredo",
+      "description": "**Creamy Alfredo pasta with garlic and cheese.**\n\n- Boil penne pasta and drain.\n- In a pan, melt butter and sauté garlic.\n- Add cream and grated parmesan.\n- Stir in cooked pasta and mix until coated.\n- Serve hot with herbs or extra cheese.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/f5/8b/02/f58b02db03d5e4b818c01bb271f86f32.jpg",
+      "ingredients": ["Penne pasta", "Cream", "Parmesan cheese", "Garlic", "Butter"]
+    },
+    {
+      "id": 20,
+      "title": "Brownies",
+      "description": "**Rich chocolate brownies with a fudgy texture and crunchy nuts.**\n\n- Mix melted butter, sugar, cocoa powder, and eggs.\n- Fold in flour and chopped walnuts.\n- Pour into a greased tray and bake.\n- Cool and cut into squares.\n- Enjoy warm or chilled.",
+      "category": "Dessert",
+      "image": "https://i.pinimg.com/736x/57/91/ed/5791edc7671745a98b1ecb263f65d831.jpg",
+      "ingredients": ["Cocoa powder", "Flour", "Butter", "Eggs", "Sugar", "Walnuts"]
+    },
+    {
+      "id": 21,
+      "title": "Aloo Paratha",
+      "description": "**Stuffed Indian flatbread with spiced mashed potatoes.**\n\n- Boil and mash potatoes with spices, coriander, and green chili.\n- Knead wheat flour dough and roll into discs.\n- Place stuffing in center and seal edges.\n- Roll gently and cook on a hot tawa with ghee.\n- Serve hot with curd or pickle.",
+      "category": "Breakfast",
+      "image": "https://i.pinimg.com/736x/d9/77/9f/d9779fb9dcbe23ea71e253daa72358c3.jpg",
+      "ingredients": ["Wheat flour", "Potatoes", "Coriander", "Green chili", "Spices", "Curd"]
+    },
+    {
+      "id": 22,
+      "title": "Poha",
+      "description": "**Light and flavorful flattened rice cooked with turmeric and veggies.**\n\n- Rinse poha and keep aside.\n- Heat oil and add mustard seeds, curry leaves, onions, and peas.\n- Add turmeric and salt.\n- Mix in the poha and cook for a few minutes.\n- Garnish with coriander and serve with lemon wedges.",
+      "category": "Breakfast",
+      "image": "https://i.pinimg.com/736x/70/05/ed/7005eddd4478c851a030a76fcbeb067a.jpg",
+      "ingredients": ["Poha", "Mustard seeds", "Turmeric", "Onions", "Peas", "Curry leaves"]
+    },
+    {
+      "id": 23,
+      "title": "Idli Sambar",
+      "description": "**Soft steamed rice cakes served with a tangy lentil stew.**\n\n- Prepare idli batter using soaked rice and urad dal.\n- Steam in idli molds until fluffy.\n- Cook sambar with dal, tamarind, and vegetables.\n- Temper with mustard seeds, curry leaves, and chilies.\n- Serve hot idli with sambar and chutney.",
+      "category": "Breakfast",
+      "image": "https://i.pinimg.com/736x/58/3d/83/583d8321c3ad712a5d784147e471c3ac.jpg",
+      "ingredients": ["Rice", "Urad dal", "Sambar dal", "Vegetables", "Tamarind", "Spices"]
+    },
+    {
+      "id": 24,
+      "title": "Masala Dosa",
+      "description": "**Crispy dosa filled with spiced potato mash, served with chutney.**\n\n- Prepare dosa batter with rice and urad dal.\n- Make a potato filling with mustard seeds, onions, and spices.\n- Spread batter on a hot tawa into a thin crepe.\n- Add filling and fold.\n- Serve with coconut chutney and sambar.",
+      "category": "Breakfast",
+      "image": "https://i.pinimg.com/736x/69/e9/6b/69e96b19c26f337f8b47257aa8e6ad25.jpg",
+      "ingredients": ["Rice", "Urad dal", "Potatoes", "Mustard seeds", "Curry leaves", "Chutney"]
+    },
+    {
+      "id": 25,
+      "title": "Rajma Chawal",
+      "description": "**Comforting kidney bean curry served with steamed rice.**\n\n- Soak and pressure cook rajma.\n- Prepare onion-tomato masala with spices.\n- Add rajma and simmer until thick.\n- Cook basmati rice separately.\n- Serve rajma over hot rice with onion rings.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/f6/7d/13/f67d13f82d372cbf8fe3a4f48f80975e.jpg",
+      "ingredients": ["Kidney beans", "Onions", "Tomatoes", "Garlic", "Spices", "Rice"]
+    },
+    {
+      "id": 26,
+      "title": "Dal Tadka",
+      "description": "**Yellow lentils tempered with garlic, cumin, and red chili.**\n\n- Cook toor dal with turmeric until soft.\n- Heat ghee and add cumin, garlic, and red chili.\n- Pour tempering over cooked dal.\n- Simmer and serve hot with rice or roti.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/f2/82/44/f28244aedd093dc0e474ce1aba7861b8.jpg",
+      "ingredients": ["Toor dal", "Garlic", "Cumin", "Ghee", "Red chili", "Turmeric"]
+    },
+    {
+      "id": 27,
+      "title": "Chole Bhature",
+      "description": "**Spicy chickpea curry paired with puffed deep-fried bread.**\n\n- Soak and pressure cook chickpeas.\n- Make onion-tomato masala with chole spices.\n- Simmer until thick.\n- Prepare dough with flour and yogurt, rest it.\n- Roll and deep fry bhature until fluffy.\n- Serve hot with onion salad.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/fe/a6/a8/fea6a883cf2ff5f14dc4ef30e680986a.jpg",
+      "ingredients": ["Chickpeas", "Onions", "Tomatoes", "Flour", "Yogurt", "Spices"]
+    },
+    {
+      "id": 28,
+      "title": "Mixed Veg Curry",
+      "description": "**Colorful mix of vegetables cooked in aromatic gravy.**\n\n- Chop carrots, beans, potatoes, and other veggies.\n- Sauté onions, ginger, garlic, and tomatoes.\n- Add spices and cook veggies until tender.\n- Add water or cream to adjust consistency.\n- Garnish with coriander and serve.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/0e/71/59/0e715939aedc11cc8f16be414482d60e.jpg",
+      "ingredients": ["Carrots", "Beans", "Potatoes", "Onions", "Tomatoes", "Spices"]
+    },
+    {
+      "id": 29,
+      "title": "Fried Rice",
+      "description": "**Stir-fried rice with veggies and soy-based flavor.**\n\n- Cook and cool basmati rice.\n- Heat oil and sauté garlic, carrots, and capsicum.\n- Add rice and toss with soy sauce and seasoning.\n- Garnish with spring onion and serve hot.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/11/de/a7/11dea79c0370fc5c9d8a0fbbbb88ad19.jpg",
+      "ingredients": ["Basmati rice", "Carrots", "Capsicum", "Soy sauce", "Garlic", "Spring onion"]
+    },
+    {
+      "id": 30,
+      "title": "Paneer Butter Masala",
+      "description": "**Cubes of paneer in rich and creamy tomato gravy.**\n\n- Sauté paneer cubes lightly in butter (optional).\n- Prepare base with tomato puree, onions, and spices.\n- Add cream and butter, then simmer.\n- Mix in paneer and cook gently.\n- Serve with naan or jeera rice.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/35/b3/a5/35b3a5ce12f09c64e1868af62a970dfc.jpg",
+      "ingredients": ["Paneer", "Tomato puree", "Butter", "Cream", "Spices"]
+    },
+    {
+      "id": 31,
+      "title": "Palak Paneer",
+      "description": "**Creamy spinach curry with soft paneer cubes.**\n\n- Blanch spinach leaves and blend into a puree.\n- Sauté onions, garlic, and spices.\n- Add spinach puree and simmer.\n- Add paneer cubes and cook gently.\n- Finish with a splash of cream and serve hot.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/0b/92/95/0b929550b0538bde5dd91330db24f017.jpg",
+      "ingredients": ["Spinach", "Paneer", "Garlic", "Onions", "Cream", "Spices"]
+    },
+    {
+      "id": 32,
+      "title": "Chicken Curry",
+      "description": "**Hearty chicken curry with onion-tomato base and spices.**\n\n- Marinate chicken with salt, turmeric, and yogurt.\n- Sauté onions, garlic, and ginger until golden.\n- Add tomatoes and spices.\n- Cook marinated chicken until tender.\n- Garnish with coriander and serve with rice or roti.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/cd/f8/37/cdf83760b6f38e6a2dd27a5b09c7ae57.jpg",
+      "ingredients": ["Chicken", "Onions", "Tomatoes", "Garlic", "Ginger", "Spices"]
+    },
+    {
+      "id": 33,
+      "title": "Biryani",
+      "description": "**Aromatic rice dish with layers of meat or vegetables.**\n\n- Marinate meat or veggies with yogurt and spices.\n- Cook basmati rice with whole spices.\n- Layer meat and rice, sprinkle saffron milk.\n- Cover and cook on dum (steam).\n- Serve with raita or salad.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/c5/d2/62/c5d262f3377da91a7229772026a2ec5c.jpg",
+      "ingredients": ["Basmati rice", "Chicken or Veggies", "Yogurt", "Onions", "Spices", "Saffron"]
+    },
+    {
+      "id": 34,
+      "title": "Chapati with Sabzi",
+      "description": "**Soft wheat flatbreads served with seasonal vegetable curry.**\n\n- Knead dough with wheat flour and water.\n- Cook vegetables with onions, tomatoes, and spices.\n- Roll dough into chapatis and cook on a hot tawa.\n- Serve chapati with hot sabzi.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/13/78/7b/13787b60b309d19c9ed42537b3295258.jpg",
+      "ingredients": ["Wheat flour", "Mixed vegetables", "Cumin", "Turmeric", "Oil"]
+    },
+    {
+      "id": 35,
+      "title": "Maggie Noodles",
+      "description": "**Quick-cooked instant noodles with a veggie twist.**\n\n- Boil water and add noodles and tastemaker.\n- Add chopped vegetables like carrots and beans.\n- Simmer until cooked.\n- Serve hot for a comforting snack.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/39/a7/d0/39a7d04b6998e8b5d92554a5954fbbd6.jpg",
+      "ingredients": ["Instant noodles", "Water", "Mixed vegetables", "Noodle masala"]
+    },
+    {
+      "id": 36,
+      "title": "Samosa",
+      "description": "**Golden-fried pastry stuffed with spicy mashed potatoes.**\n\n- Prepare filling with boiled potatoes, peas, and spices.\n- Make dough using flour, oil, and water.\n- Roll and fill samosa sheets, fold into cones.\n- Deep fry until golden and crispy.\n- Serve with chutney.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/b6/52/69/b652697587d8cdb73f5720f5df92927d.jpg",
+      "ingredients": ["Potatoes", "Peas", "Flour", "Cumin", "Garam masala", "Oil"]
+    },
+    {
+      "id": 37,
+      "title": "Pakora",
+      "description": "**Crispy Indian fritters made from vegetables and gram flour.**\n\n- Slice vegetables like onions and potatoes.\n- Make a thick batter with gram flour, spices, and water.\n- Dip veggies and deep fry until golden.\n- Serve hot with chutney or tea.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/9d/a9/1b/9da91b4280ae2d7332190a488c361dd7.jpg",
+      "ingredients": ["Gram flour", "Onions", "Potatoes", "Spices", "Oil"]
+    },
+    {
+      "id": 38,
+      "title": "Tea & Biscuits",
+      "description": "**Traditional Indian chai served with crispy biscuits.**\n\n- Boil milk and water with tea leaves and sugar.\n- Add cardamom for aroma.\n- Strain into cups and serve with assorted biscuits.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/c1/3d/5d/c13d5df88bfcd046021d4c5249bc8477.jpg",
+      "ingredients": ["Milk", "Tea leaves", "Sugar", "Biscuits", "Cardamom"]
+    },
+    {
+      "id": 39,
+      "title": "Lassi",
+      "description": "**Cool and creamy yogurt drink, sweet or salted.**\n\n- Blend yogurt with sugar or salt.\n- Add cardamom for flavor.\n- Serve chilled with ice cubes.\n- Garnish with mint or saffron if desired.",
+      "category": "Beverages",
+      "image": "https://i.pinimg.com/736x/ed/4f/17/ed4f170934a6903610456c6c263911d8.jpg",
+      "ingredients": ["Yogurt", "Sugar or Salt", "Cardamom", "Ice cubes"]
+    },
+    {
+      "id": 40,
+      "title": "Lemon Water",
+      "description": "**Refreshing citrus drink perfect for hydration.**\n\n- Squeeze lemon juice into chilled water.\n- Add sugar or salt as preferred.\n- Mix well and add mint leaves.\n- Serve cold with ice.",
+      "category": "Beverages",
+      "image": "https://i.pinimg.com/736x/ab/22/04/ab2204dc37b8570318ed08340d61cbbe.jpg",
+      "ingredients": ["Lemon", "Water", "Sugar or Salt", "Mint leaves"]
+    }
+  ],
+  "categories": [
+    {
+      "name": "Breakfast"
+    },
+    {
+      "name": "Lunch"
+    },
+    {
+      "name": "Dinner"
+    },
+    {
+      "name": "Dessert"
+    },
+    {
+      "name": "Snacks"
+    },
+    {
+      "name": "Beverages"
+    }
+  ]
+}

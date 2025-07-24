@@ -1,0 +1,165 @@
+/* ---------------- Detail Page Background ---------------- */
+.detail-page {
+  background-image: url('https://i.pinimg.com/736x/eb/c4/35/ebc43594cd08f0793724082c76e7873d.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ---------------- Sticky Navbar ---------------- */
+/* ---------------- Sticky Navbar ---------------- */
+.food-navbar {
+  position: fixed;   /* Fixed to viewport */
+  top: 0;            /* Top edge */
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1000;     /* On top of other content */
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.logo-text {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ff7043;
+}
+
+.logo-text span {
+  color: #333;
+}
+
+/* ---------------- Food Detail Container ---------------- */
+.food-detail-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  background-image: url('https://i.pinimg.com/736x/eb/c4/35/ebc43594cd08f0793724082c76e7873d.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Optional: Add semi-transparent overlay with background color */
+  background-color: rgba(255, 255, 255, 0.4); /* or adjust as needed */
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+}
+
+
+/* ---------------- Back Button ---------------- */
+.back-btn {
+  background-color: #ffe6de;
+  color: #ff5722;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #ffccbc;
+}
+
+/* ---------------- Food Content Flex ---------------- */
+.food-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.video-box {
+  flex: 2;
+}
+
+.food-video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------------- Info Column ---------------- */
+.info-column {
+  flex: 1;
+}
+
+.info-column h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #ff7043;
+}
+
+.ingredients h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ff5722;
+  margin-bottom: 10px;
+}
+
+.ingredients ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.ingredients li {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* ---------------- Cooking Steps ---------------- */
+.description {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.description h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ff5722;
+  margin-bottom: 12px;
+}
+
+.description p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  white-space: pre-line;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+  .food-content {
+    flex-direction: column;
+  }
+
+  .info-column {
+    margin-top: 24px;
+  }
+}

@@ -1,0 +1,37 @@
+<div class="detail-page">
+  <!-- Navbar -->
+  <nav class="food-navbar">
+    <div class="logo" routerLink="/home">
+      <img src="https://i.pinimg.com/736x/d2/56/8c/d2568c83e1edc3c7a5b9aaf6b575f7d9.jpg" alt="Foodiee Logo" class="logo-img" />
+      <span class="logo-text">Foodiee<span>.co</span></span>
+    </div>
+  </nav>
+
+  <div class="food-detail-container">
+    <button class="back-btn" (click)="goBack()">← Back to Home</button>
+
+    <div class="food-content">
+      <!-- Left: Video -->
+      <div class="video-box">
+        <video controls [src]="foodItem?.video" class="food-video"></video>
+      </div>
+
+      <!-- Right: Ingredients -->
+      <div class="info-column">
+        <h2>{{ foodItem?.title }}</h2>
+        <div class="ingredients">
+          <h3>Ingredients</h3>
+          <ul>
+            <li *ngFor="let item of foodItem?.ingredients">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cooking steps -->
+    <div class="description" *ngIf="foodItem?.description">
+      <h3>Cooking Steps</h3>
+      <p [innerHTML]="foodItem.description"></p>
+    </div>
+  </div>
+</div>

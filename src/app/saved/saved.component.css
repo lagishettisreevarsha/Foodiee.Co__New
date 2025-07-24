@@ -1,0 +1,36 @@
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: rgb(0, 0, 0);
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.food-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1rem;
+  backdrop-filter: blur(6px);
+  color: rgb(18, 18, 18);
+  transition: transform 0.2s ease;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(255, 165, 0, 0.25);
+}
+
+.food-card:hover {
+  transform: scale(1.03);
+}
+
+.food-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  height: 100%;
+}
+router-outlet + * {
+  height: 100%;
+}
+.chatbot-float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #ff6b00; /* Foodiee orange */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 9999;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.chatbot-float-btn:hover {
+  transform: scale(1.1);
+}

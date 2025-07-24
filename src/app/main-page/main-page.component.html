@@ -1,0 +1,42 @@
+<video autoplay muted loop id="bg-video">
+  <source src="https://videos.pexels.com/video-files/6603821/6603821-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="overlay">
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://res.cloudinary.com/dhzzlikgi/image/upload/v1751894492/d2568c83e1edc3c7a5b9aaf6b575f7d9-removebg_ndoqth.png" alt="Foodiee Logo" class="logo-img" />
+      <span>Foodiee<span>.co</span></span>
+    </div>
+
+    <div class="nav-buttons">
+      <button (click)="showLogin = true; showSignup = false; isLoginMode = true">Login</button>
+      <button (click)="showSignup = true; showLogin = false; isLoginMode = false">Signup</button>
+    </div>
+  </nav>
+
+  <div *ngIf="!showLogin && !showSignup" class="intro-text">
+    <h1>🍳 Welcome to Foodiee.co</h1>
+    <p>Discover mouthwatering dishes, cooking secrets, and culinary inspiration.<br />
+      Join now to save recipes, share your own, and explore food like never before.</p>
+  </div>
+
+  <div class="auth-box" *ngIf="showLogin || showSignup">
+    <button class="back-btn-top" (click)="closeForm()">✕</button>
+    <h2>{{ isLoginMode ? 'Login' : 'Signup' }}</h2>
+
+    <form (ngSubmit)="onSubmit()">
+      <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required />
+      <input type="password" [(ngModel)]="password" name="password" placeholder="Password" required />
+      <button type="submit">{{ isLoginMode ? 'Login' : 'Signup' }}</button>
+    </form>
+
+    <p class="toggle">
+      {{ isLoginMode ? 'Don\'t have an account?' : 'Already have an account?' }}
+      <span (click)="toggleMode()">{{ isLoginMode ? 'Sign up' : 'Login' }}</span>
+    </p>
+
+    <p *ngIf="errorMsg" class="error">{{ errorMsg }}</p>
+  </div>
+</div>

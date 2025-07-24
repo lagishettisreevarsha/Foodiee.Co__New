@@ -1,1 +1,50 @@
-<p>upload-recipe works!</p>
+<!-- src/app/upload-recipe/upload-recipe.component.html -->
+<div class="upload-container">
+  <div class="upload-card">
+    <h2 class="upload-title">🍽️ Share Your Recipe</h2>
+
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+      <input
+        type="text"
+        placeholder="✨ Recipe Title"
+        [(ngModel)]="title"
+        name="title"
+        required
+      />
+
+      <input
+        type="text"
+        placeholder="🖼️ Image URL"
+        [(ngModel)]="image"
+        name="image"
+        required
+      />
+
+      <input
+        type="text"
+        placeholder="📂 Category (e.g., Breakfast)"
+        [(ngModel)]="category"
+        name="category"
+        required
+      />
+
+      <textarea
+        placeholder="📝 Description + Steps (in steps)"
+        [(ngModel)]="description"
+        name="description"
+        required
+      ></textarea>
+
+      <textarea
+        placeholder="🥕 Ingredients (comma-separated)"
+        [(ngModel)]="ingredients"
+        name="ingredients"
+        required
+      ></textarea>
+
+      <button type="submit">🚀 Upload Recipe</button>
+
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    </form>
+  </div>
+</div>

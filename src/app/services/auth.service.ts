@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-
   constructor() {}
 
   getLoggedInUser(): any {
@@ -18,10 +17,5 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('loggedInUser');
-  }
-
-  isPremiumUser(): boolean {
-    const user = this.getLoggedInUser();
-    return user?.isPremium || false;
   }
 }

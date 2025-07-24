@@ -93,6 +93,13 @@ export class RecipeService {
     return this.favoritedItems;
   }
 
+ 
+saveUploadedRecipe(recipe: any) {
+  const existing = JSON.parse(localStorage.getItem('uploadedRecipes') || '[]');
+  existing.push(recipe);
+  localStorage.setItem('uploadedRecipes', JSON.stringify(existing));
+}
+
   clearAll() {
     this.savedItems = [];
     this.favoritedItems = [];

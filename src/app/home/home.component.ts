@@ -7,7 +7,6 @@ import { ScrollService } from '../services/scroll.service';
 import { RecipeService } from '../services/recipe.service';
 import { AuthService } from '../services/auth.service';
 
-
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -31,7 +30,6 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    
     this.foodService.getFoods().subscribe(data => {
       this.foodItems = data;
       setTimeout(() => {
@@ -102,33 +100,27 @@ export class HomeComponent implements OnInit {
   }
 
   goToUpload(): void {
-  const user = this.authService.getLoggedInUser();
-  if (!user) {
-    alert('Please log in to upload recipes.');
-    this.router.navigate(['/login']);
-    return;
-  }
+    const user = this.authService.getLoggedInUser();
+    if (!user) {
+      alert('Please log in to upload recipes.');
+      this.router.navigate(['/']);
+      return;
+    }
 
-  if (user?.isPremium) {
     this.router.navigate(['/upload-recipe']);
-  } else {
-    alert('This feature is only for premium users!');
-    this.router.navigate(['/profile']); 
   }
-}
-mockLogin() {
-  const user = {
-    email: 'varsha@foodiee.co',
-    isPremium: true,  // 👈 set to false if testing normal user
-    joinDate: new Date().toISOString()
-  };
-  localStorage.setItem('loggedInUser', JSON.stringify(user));
-  alert('Logged in as Premium User');
-}
 
-mockLogout() {
-  localStorage.removeItem('loggedInUser');
-  alert('Logged out!');
-}
+  mockLogin() {
+    const user = {
+      email: 'varsha@foodiee.co',
+      joinDate: new Date().toISOString()
+    };
+    localStorage.setItem('loggedInUser', JSON.stringify(user));
+    alert('Logged in as User');
+  }
 
+  mockLogout() {
+    localStorage.removeItem('loggedInUser');
+    alert('Logged out!');
+  }
 }

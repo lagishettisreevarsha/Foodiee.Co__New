@@ -5,20 +5,12 @@
     Foodiee<span>.co</span>
   </div>
 
-  <div class="nav-actions">
+  <div class="nav-actions right-align-icons">
     <span class="nav-icon" (click)="goToSaved()" title="Saved Recipes">💾</span>
     <button class="nav-icon" title="Upload Recipe" (click)="goToUpload()">📤</button>
     <span class="nav-icon" (click)="goToFavourites()" title="Favourited Recipes">❤️</span>
     <span class="nav-icon" (click)="goToProfile()" title="Your Profile">👤</span>
-    
   </div>
- 
-  <div class="auth-mock-buttons">
-  <button class="auth-btn login" (click)="mockLogin()">Mock Login (Premium)</button>
-  <button class="auth-btn logout" (click)="mockLogout()">Logout</button>
-</div>
-
-
 </nav>
 
 <!-- Main Content -->
@@ -49,14 +41,18 @@
         <h3>{{ item.title }}</h3>
         <p>{{ item.description.split('\n')[0] }}</p>
 
-        <div class="card-actions">
-          <button (click)="toggleSave(item.id); $event.stopPropagation()">
-            {{ isSaved(item.id) ? '💾 Saved' : '💾 Save' }}
-          </button>
-          <button (click)="toggleFavorite(item.id); $event.stopPropagation()">
-            {{ isFavorited(item.id) ? '❤️ Favourited' : '🤍 Favourite' }}
-          </button>
-        </div>
+          <div class="card-actions">
+            <button (click)="toggleSave(item.id); $event.stopPropagation()">
+              {{ isSaved(item.id) ? '💾 Saved' : '💾 Save' }}
+            </button>
+            <button (click)="toggleFavorite(item.id); $event.stopPropagation()">
+              {{ isFavorited(item.id) ? '❤️ Favourited' : '🤍 Favourite' }}
+            </button>
+            <button *ngIf="isUploadedRecipe(item.id)" (click)="deleteRecipe(item.id); $event.stopPropagation()" class="delete-btn">
+              🗑️ Delete
+            </button>
+          </div>
+
       </div>
     </div>
   </div>

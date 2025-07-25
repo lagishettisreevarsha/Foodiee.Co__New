@@ -92,12 +92,26 @@ export class RecipeService {
   getFavoritedItems(): number[] {
     return this.favoritedItems;
   }
+getUploadedRecipes(): any[] {
+  return JSON.parse(localStorage.getItem('uploadedRecipes') || '[]');
+}
 
  
 saveUploadedRecipe(recipe: any) {
   const existing = JSON.parse(localStorage.getItem('uploadedRecipes') || '[]');
   existing.push(recipe);
   localStorage.setItem('uploadedRecipes', JSON.stringify(existing));
+}
+
+// Add inside RecipeService class
+
+deleteUploadedRecipe(id: number): void {
+  const recipes = this.getUploadedRecipes().filter(recipe => recipe.id !== id);
+  localStorage.setItem('uploadedRecipes', JSON.stringify(recipes));
+}
+
+isUploadedRecipe(id: number): boolean {
+  return this.getUploadedRecipes().some(recipe => recipe.id === id);
 }
 
   clearAll() {

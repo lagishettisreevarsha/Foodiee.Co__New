@@ -30,15 +30,21 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.foodService.getFoods().subscribe(data => {
-      this.foodItems = data;
-      setTimeout(() => {
-        window.scrollTo(0, this.scrollService.getScrollPosition());
-      }, 0);
-    });
+    this.loadRecipes();
 
     this.foodService.getCategories().subscribe(data => {
       this.categories = data;
+    });
+  }
+
+  // ✅ This loads both uploaded + db.json recipes
+  loadRecipes() {
+    this.foodService.getFoods().subscribe(data => {
+      const uploaded = this.recipeService.getUploadedRecipes();
+      this.foodItems = [...uploaded, ...data];
+      setTimeout(() => {
+        window.scrollTo(0, this.scrollService.getScrollPosition());
+      }, 0);
     });
   }
 
@@ -117,10 +123,25 @@ export class HomeComponent implements OnInit {
     };
     localStorage.setItem('loggedInUser', JSON.stringify(user));
     alert('Logged in as User');
+    this.recipeService.refreshUserKeys(); // refresh keys
+    this.loadRecipes(); // reload with correct user context
   }
 
   mockLogout() {
     localStorage.removeItem('loggedInUser');
     alert('Logged out!');
+    this.recipeService.refreshUserKeys(); // refresh keys
+    this.loadRecipes(); // reload as guest
   }
+  // Add inside HomeComponent class
+
+isUploadedRecipe(id: number): boolean {
+  return this.recipeService.isUploadedRecipe(id);
+}
+
+deleteRecipe(id: number): void {
+  this.recipeService.deleteUploadedRecipe(id);
+  this.loadRecipes(); // Refresh list after deletion
+}
+
 }

@@ -27,12 +27,12 @@ export class MainPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-   
-     if (this.userService.isLoggedIn()) {
-    this.router.navigate(['/home'], { replaceUrl: true });
-     }
+    // Redirect to home if already logged in
+    if (this.userService.isLoggedIn()) {
+      this.router.navigate(['/home'], { replaceUrl: true });
+    }
 
-
+    // Show error if redirected from protected page
     this.route.queryParams.subscribe(params => {
       if (params['error'] === 'unauthorized') {
         this.errorMsg = 'Please login to access this page.';

@@ -3,9 +3,18 @@
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  color: #ff7a00; /* your orange theme */
+  color: #ff7a00;
   margin: 2rem 0 1rem;
   font-family: Arial, sans-serif;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  transform: translateY(-16px);
+  animation: fadeDown 0.7s cubic-bezier(.36,1.2,.48,.92) 0.1s forwards;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px);}
+  to   { opacity: 1; transform: none; }
 }
 
 /* Food grid container */
@@ -18,36 +27,63 @@
   margin: 0 auto 3rem;
 }
 
-/* Each food card */
+/* Each food card - animated entrance */
 .food-card {
-  background: #ffffff;
+  background: #fff;
   border: 2px solid #ff7a00;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 
+    transform 0.23s cubic-bezier(.31,1.24,.44,1), 
+    box-shadow 0.23s cubic-bezier(.29,1.26,.47,1);
+
+  opacity: 0;
+  transform: scale(0.96);
+  animation: gridCardReveal 0.54s cubic-bezier(.42,1.28,.31,.91) both;
+}
+@keyframes gridCardReveal {
+  from { opacity: 0; transform: scale(0.96);}
+  to   { opacity: 1; transform: scale(1);}
 }
 
+/* Stagger effect for ngFor: */
+.food-card {
+  animation-delay: calc(0.09s * var(--i, 0));
+}
+
+/* On hover: slight pop and enhanced shadow */
 .food-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px) scale(1.028);
+  box-shadow: 0 12px 28px rgba(255, 122, 0, 0.10), 0 2px 8px rgba(0,0,0,0.09);
 }
 
+/* Image styling */
 .food-card img {
   width: 100%;
   height: 160px;
   object-fit: cover;
+  transition: filter 0.2s;
+}
+.food-card:hover img {
+  filter: brightness(1.06) saturate(1.07);
 }
 
+/* Card title and excerpt */
 .food-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.18rem;
   color: #333;
   margin: 0.8rem 0 0.4rem;
 }
-
 .food-card p {
   font-size: 0.95rem;
   color: #0a0a0a;
   padding: 0 1rem 1rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .food-card img { height: 110px;}
+  .page-title { font-size: 1.3rem;}
 }

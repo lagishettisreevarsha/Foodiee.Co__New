@@ -8,63 +8,117 @@
   padding: 40px 20px;
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
+  color: #3a1e0d;
 }
 
-/* ---------------- Sticky Navbar ---------------- */
-/* ---------------- Sticky Navbar ---------------- */
+/* ---------------- Navbar: Slide-in from Top ---------------- */
 .food-navbar {
-  position: fixed;   /* Fixed to viewport */
-  top: 0;            /* Top edge */
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
   display: flex;
   align-items: center;
   padding: 16px 32px;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  z-index: 1000;     /* On top of other content */
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  z-index: 1000;
+  /* Slide-down on mount */
+  transform: translateY(-32px);
+  opacity: 0;
+  animation: navSlideDown 0.6s cubic-bezier(.36,1.68,.51,.92) 0.18s forwards;
 }
-
+@keyframes navSlideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  user-select: none;
 }
-
 .logo-img {
   width: 40px;
   height: 40px;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(255,112,67,0.18);
+  transition: box-shadow 0.3s;
 }
-
+.logo-img:hover {
+  box-shadow: 0 4px 16px rgba(255,112,67,0.36);
+}
 .logo-text {
   font-size: 32px;
   font-weight: 800;
   color: #ff7043;
+  letter-spacing: .02em;
+  transition: color 0.3s;
 }
+.logo-text span { color: #333; }
 
-.logo-text span {
-  color: #333;
-}
 
-/* ---------------- Food Detail Container ---------------- */
+/* ---------------- Main Content: Slide-Up w/ Shadow ---------------- */
 .food-detail-container {
   max-width: 1100px;
-  margin: 40px auto;
+  margin: 80px auto 40px;
   background-image: url('https://i.pinimg.com/736x/eb/c4/35/ebc43594cd08f0793724082c76e7873d.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* Optional: Add semi-transparent overlay with background color */
-  background-color: rgba(255, 255, 255, 0.4); /* or adjust as needed */
-  backdrop-filter: blur(6px);
+  background-color: rgba(255,255,255,0.56);
+  backdrop-filter: blur(8px);
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.11);
+  padding: 40px 48px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: cardSlideUp 0.75s cubic-bezier(.41,1.3,.51,.95) 0.34s forwards;
+}
+@keyframes cardSlideUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* ---------------- Section Underline Swipe Animation ---------------- */
+.info-column h2,
+.ingredients h3,
+.description h3 {
+  position: relative;
+  overflow: hidden;
+}
+.info-column h2::after,
+.ingredients h3::after,
+.description h3::after {
+  content:'';
+  position:absolute;
+  left:0; bottom:0;
+  height:3px;
+  width:100%;
+  background: linear-gradient(90deg,#ff7043 54%,#fff7f1 89%);
+  transform: scaleX(0);
+  transition: transform 0.48s cubic-bezier(.37,1.5,.31,.83) 0.4s;
+  transform-origin:left;
+}
+.food-detail-container {
+  /* triggers underline swipe after entrance */
+  animation: cardSlideUp 0.75s cubic-bezier(.41,1.3,.51,.95) 0.34s forwards, underlineShow 0s 1.1s forwards;
+}
+@keyframes underlineShow {
+  to { --underline-animate: 1;}
+}
+.food-detail-container:where([style*="--underline-animate: 1"]) .info-column h2::after,
+.food-detail-container:where([style*="--underline-animate: 1"]) .ingredients h3::after,
+.food-detail-container:where([style*="--underline-animate: 1"]) .description h3::after {
+  transform: scaleX(1);
 }
 
 
@@ -73,79 +127,103 @@
   background-color: #ffe6de;
   color: #ff5722;
   border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 12px 24px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  margin-bottom: 24px;
-  transition: background 0.3s ease;
+  margin-bottom: 28px;
+  box-shadow: 0 3px 8px rgba(255,87,34,0.10);
+  transition: background 0.2s;
 }
-
-.back-btn:hover {
+.back-btn:hover,
+.back-btn:focus {
   background-color: #ffccbc;
+  outline: none;
 }
 
-/* ---------------- Food Content Flex ---------------- */
+
+/* ---------------- Food Content ---------------- */
 .food-content {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
+/* Video */
 .video-box {
   flex: 2;
 }
-
 .food-video {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.10);
+  transition: box-shadow 0.2s, filter 0.2s;
+}
+.food-video:hover,
+.food-video:focus {
+  box-shadow: 0 6px 30px rgba(255,112,67,0.20), 0 2px 8px rgba(0,0,0,0.12);
+  filter: brightness(1.03);
+  outline: none;
 }
 
-/* ---------------- Info Column ---------------- */
+/* ---------------- Info Column & Ingredients ---------------- */
 .info-column {
   flex: 1;
 }
 
-.info-column h2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: #ff7043;
-}
-
-.ingredients h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #ff5722;
-  margin-bottom: 10px;
-}
-
+/* Ingredients: nice "grow-in from bottom" effect */
 .ingredients ul {
   padding-left: 20px;
   list-style: disc;
+  max-width: 320px;
+  list-style-position: inside;
 }
 
 .ingredients li {
   font-size: 16px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   color: #444;
+  line-height: 1.5;
+  cursor: default;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: ingredientGrowIn 0.48s cubic-bezier(.23,.86,.35,1.20) both;
+  /* stagger: automatically based on index if using Angular ngFor index */
+  animation-delay: calc(0.48s + 0.07s * var(--i, 0));
+  transition: color 0.16s;
 }
+@keyframes ingredientGrowIn {
+  to { opacity: 1; transform: none;}
+}
+
+.ingredients li:hover {
+  color: #ff7043;
+  font-weight: 600;
+}
+
+/* For Angular/EJS/React: set style="--i:INDEX" on each <li> for stagger! */
 
 /* ---------------- Cooking Steps ---------------- */
 .description {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid #e0d0c8;
+  opacity: 0;
+  animation: textRevealer 0.6s cubic-bezier(.27,.92,.38,.94) 0.9s forwards;
 }
-
+@keyframes textRevealer {
+  to { opacity: 1; }
+}
 .description h3 {
   font-size: 20px;
   font-weight: 600;
   color: #ff5722;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 6px #ffd4bd19;
 }
-
 .description p {
   font-size: 16px;
   line-height: 1.7;
@@ -154,12 +232,20 @@
 }
 
 /* ---------------- Responsive ---------------- */
+@media (max-width: 992px) {
+  .food-detail-container { padding: 32px 30px; }
+  .food-content { gap: 32px; }
+}
 @media (max-width: 768px) {
-  .food-content {
-    flex-direction: column;
-  }
-
-  .info-column {
-    margin-top: 24px;
-  }
+  .food-content { flex-direction: column; }
+  .info-column { margin-top: 24px; }
+  .ingredients ul { max-width: 100%; }
+}
+@media (max-width: 480px) {
+  .food-detail-container { padding: 18px 6px; }
+  .back-btn { width: 100%; padding: 14px 0; font-size: 17px; }
+  .logo-text { font-size: 23px; }
+  .info-column h2 { font-size: 19px; }
+  .ingredients h3, .description h3 { font-size: 15px; }
+  .ingredients li, .description p { font-size: 12.5px; }
 }

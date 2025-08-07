@@ -1,11 +1,11 @@
-/* -------------------- RESET -------------------- */
+/* ---------------- RESET ---------------- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* -------------------- NAVBAR -------------------- */
+/* ---------------- NAVBAR ---------------- */
 .home-navbar {
   display: flex;
   justify-content: space-between;
@@ -16,8 +16,25 @@
   position: sticky;
   top: 0;
   z-index: 20;
+
+  /* Slide-in from top animation */
+  transform: translateY(-32px);
+  opacity: 0;
+  animation: navDropIn 0.5s cubic-bezier(.56,1.37,.64,1) 0.12s forwards;
 }
 
+@keyframes navDropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -39,6 +56,7 @@
   border-radius: 8px;
 }
 
+/* Navigation actions */
 .nav-actions {
   display: flex;
   align-items: center;
@@ -65,44 +83,7 @@
   border: none;
 }
 
-.auth-mock-buttons {
-  margin-left: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.auth-btn {
-  padding: 8px 16px;
-  font-size: 0.85rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  font-family: 'Poppins', sans-serif;
-}
-
-.auth-btn.login {
-  background: #ff7043;
-  color: #fff;
-}
-
-.auth-btn.login:hover {
-  background: #e85c2d;
-}
-
-.auth-btn.logout {
-  background: #fff;
-  color: #ff7043;
-  border: 2px solid #ff7043;
-}
-
-.auth-btn.logout:hover {
-  background: #fff3e0;
-}
-
-/* -------------------- CONTAINER -------------------- */
+/* ---------------- CONTAINER ---------------- */
 .home-container {
   background: url('https://i.pinimg.com/736x/eb/c4/35/ebc43594cd08f0793724082c76e7873d.jpg') no-repeat center center / cover;
   min-height: 100vh;
@@ -110,13 +91,28 @@
   backdrop-filter: brightness(0.95);
 }
 
-/* -------------------- CONTENT -------------------- */
+/* Main content fade + slide animation */
 .home-content {
   max-width: 1200px;
   margin: 0 auto;
+
+  opacity: 0;
+  transform: translateY(36px);
+  animation: contentFadeIn 0.7s cubic-bezier(.42,1.14,.64,1) 0.27s forwards;
 }
 
-/* -------------------- SEARCH BAR -------------------- */
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------------- SEARCH BAR ---------------- */
 .search-filter-bar {
   display: flex;
   justify-content: center;
@@ -139,7 +135,7 @@
   box-shadow: 0 0 5px rgba(255, 112, 67, 0.4);
 }
 
-/* -------------------- CATEGORY TOGGLES -------------------- */
+/* ---------------- CATEGORY TOGGLES ---------------- */
 .category-toggles {
   display: flex;
   flex-wrap: wrap;
@@ -156,27 +152,41 @@
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
+
+  /* Fade + scale animation */
+  opacity: 0;
+  transform: scale(0.96);
+  animation: catStaggerIn 0.38s cubic-bezier(.36,1.2,.48,.92) forwards;
 }
 
-.category-toggles button:hover {
-  background: #ffe6de;
-  border-color: #ff7043;
-  color: #ff7043;
+/* Stagger delays for category buttons */
+.category-toggles button:nth-child(1) { animation-delay: 0.50s; }
+.category-toggles button:nth-child(2) { animation-delay: 0.58s; }
+.category-toggles button:nth-child(3) { animation-delay: 0.66s; }
+.category-toggles button:nth-child(4) { animation-delay: 0.74s; }
+.category-toggles button:nth-child(5) { animation-delay: 0.82s; }
+
+/* Add more if you have more categories */
+
+@keyframes catStaggerIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.category-toggles button.active {
-  background: #ff7043;
-  color: #fff;
-  border-color: #ff7043;
-}
-
-/* -------------------- FOOD GRID -------------------- */
+/* ---------------- FOOD GRID ---------------- */
 .food-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
+/* Food card with scale + fade stagger */
 .food-card {
   background: #fff;
   border: 1px solid #eee;
@@ -185,28 +195,63 @@
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+  opacity: 0;
+  transform: scale(0.97);
+  animation: foodCardFadeGrow 0.46s cubic-bezier(.41,1.38,.72,1) forwards;
 }
 
+/* Stagger delays using nth-child */
+.food-card:nth-child(1) { animation-delay: 0.32s; }
+.food-card:nth-child(2) { animation-delay: 0.42s; }
+.food-card:nth-child(3) { animation-delay: 0.52s; }
+.food-card:nth-child(4) { animation-delay: 0.62s; }
+.food-card:nth-child(5) { animation-delay: 0.72s; }
+.food-card:nth-child(6) { animation-delay: 0.82s; }
+.food-card:nth-child(7) { animation-delay: 0.92s; }
+.food-card:nth-child(8) { animation-delay: 1.02s; }
+
+/* Animation keyframes */
+@keyframes foodCardFadeGrow {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Food card hover */
 .food-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   border-color: #ff7043;
 }
 
+/* Food card image */
 .food-card img {
   width: 100%;
   height: 160px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 0.7rem;
+  transition: filter 0.2s;
 }
 
+.food-card:hover img {
+  filter: brightness(1.06) saturate(1.07);
+}
+
+/* Food card title */
 .food-card h3 {
   font-size: 1.1rem;
   margin: 0.5rem 0 0.3rem;
   font-weight: 600;
 }
 
+/* Card actions buttons container */
 .card-actions {
   display: flex;
   justify-content: space-between;
@@ -214,6 +259,7 @@
   margin-top: 0.7rem;
 }
 
+/* Each button within card actions */
 .card-actions button {
   flex: 1;
   padding: 0.5rem 0.8rem;
@@ -225,12 +271,28 @@
   transition: background 0.2s ease, border-color 0.2s ease;
 }
 
+/* Button hover */
 .card-actions button:hover {
   background: #ffe0d4;
   border-color: #ff7043;
 }
 
-/* -------------------- CHATBOT BUTTON -------------------- */
+/* Delete button */
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}
+
+/* ---------------- CHATBOT TOGGLE BUTTON ---------------- */
 .chatbot-toggle-btn {
   position: fixed;
   bottom: 20px;
@@ -245,22 +307,78 @@
   cursor: pointer;
   z-index: 9999;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  opacity: 0;
+  transform: scale(0.7);
+  animation: cbotPopBtn 0.45s cubic-bezier(.58,1.68,.44,1) 1.03s forwards;
+  transition: background-color 0.3s ease;
 }
 
 .chatbot-toggle-btn:hover {
   background-color: #e85c2d;
 }
 
-.delete-btn {
-  background-color: #ff4d4d;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 8px;
+@keyframes cbotPopBtn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.delete-btn:hover {
-  background-color: #cc0000;
+/* ---------------- Responsive ---------------- */
+@media (max-width: 992px) {
+  .home-container {
+    padding: 1.5rem;
+  }
+  .food-grid {
+    gap: 1rem;
+  }
+  .category-toggles button {
+    padding: 7px 14px;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .food-content {
+    flex-direction: column;
+  }
+  .info-column {
+    margin-top: 24px;
+  }
+  .ingredients ul {
+    max-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .food-card img {
+    height: 110px;
+  }
+  .home-container {
+    padding: 1rem 1rem;
+  }
+  .nav-icon {
+    font-size: 1.3rem;
+    padding: 6px;
+  }
+}
+@media (max-width: 480px) {
+  .home-container {
+    padding: 1rem 0.5rem;
+  }
+  .food-card h3 {
+    font-size: 1rem;
+  }
+  .card-actions button {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+  .chatbot-toggle-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
 }

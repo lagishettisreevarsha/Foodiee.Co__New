@@ -1,3 +1,4 @@
+/* ---------------- Overlay Fade-in ---------------- */
 .chatbot-overlay {
   position: fixed;
   inset: 0;
@@ -6,13 +7,20 @@
   align-items: center;
   justify-content: center;
   z-index: 9998;
+  animation: overlayFadeIn 0.42s cubic-bezier(.38,1.26,.7,1) both;
 }
 
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ---------------- Chatbot Main Window Pop-in ---------------- */
 .chatbot-page {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, calc(-46% + 32px)) scale(0.98);
   width: 90%;
   max-width: 500px;
   height: 80vh;
@@ -24,8 +32,22 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   z-index: 9998;
   overflow: hidden;
+  opacity: 0;
+  animation: chatbotPopUp 0.55s cubic-bezier(.4,1.32,.54,.97) 0.12s forwards;
 }
 
+@keyframes chatbotPopUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-46% + 32px)) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* ---------------- Header ---------------- */
 .chatbot-header {
   background-color: #ff6b00;
   color: white;
@@ -38,6 +60,7 @@
   border-top-right-radius: 20px;
 }
 
+/* ---------------- Back Button ---------------- */
 .back-btn {
   background: none;
   color: white;
@@ -46,11 +69,14 @@
   cursor: pointer;
 }
 
+/* ---------------- Chat Window & Message Styles ---------------- */
 .chat-window {
   flex: 1;
   padding: 16px;
   overflow-y: auto;
   background: #fff9f5;
+  display: flex;
+  flex-direction: column;
 }
 
 .user, .bot {
@@ -60,6 +86,8 @@
   max-width: 80%;
   font-size: 14px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  opacity: 0;
+  animation: chatMsgIn 0.37s cubic-bezier(.23,1.1,.33,1) forwards;
 }
 
 .user {
@@ -74,13 +102,30 @@
   margin-right: auto;
 }
 
+/* Stagger the chat bubble animation: 
+   In your HTML/ngFor, use: 
+   [style.animation-delay]="(0.09 * i) + 's'" */
+@keyframes chatMsgIn {
+  from { opacity: 0; transform: translateY(12px);}
+  to   { opacity: 1; transform: none;}
+}
+
+/* ---------------- Typing Indicator ---------------- */
 .typing-indicator {
   font-size: 13px;
   color: #888;
   padding: 8px;
   font-style: italic;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  animation: chatMsgIn 0.32s 0.09s forwards, blinkText 1.2s infinite 0.9s;
+}
+@keyframes blinkText {
+  0%, 60%, 100% { opacity: 1;}
+  25%, 80% { opacity: 0.5;}
 }
 
+/* ---------------- Input ---------------- */
 input {
   border: none;
   border-top: 1px solid #eee;
@@ -90,7 +135,10 @@ input {
   background: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  font-family: inherit;
 }
+
+/* ---------------- Floating Chatbot Icon Button ---------------- */
 .chatbot-icon {
   position: fixed;
   bottom: 24px;
@@ -102,30 +150,30 @@ input {
   padding: 14px;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
+  z-index: 10000;
   cursor: pointer;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: iconPopIn 0.43s cubic-bezier(.57,1.4,.38,1.02) 0.18s forwards;
   transition: transform 0.2s ease;
 }
 
 .chatbot-icon:hover {
   transform: scale(1.1);
 }
-.chatbot-icon {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background-color: #ff6b00;
-  color: white;
-  border: none;
-  font-size: 22px;
-  padding: 14px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 10000; /* higher than modal, nav, etc. */
-  cursor: pointer;
-  transition: transform 0.2s ease;
+
+@keyframes iconPopIn {
+  from { opacity: 0; transform: scale(0.5);}
+  to   { opacity: 1; transform: scale(1);}
 }
 
-.chatbot-icon:hover {
-  transform: scale(1.1);
+/* ---------------- Responsive ---------------- */
+@media (max-width: 600px) {
+  .chatbot-page {
+    width: 98%;
+    max-width: 99vw;
+    height: 94vh;
+    padding: 0;
+    border-radius: 12px;
+  }
 }

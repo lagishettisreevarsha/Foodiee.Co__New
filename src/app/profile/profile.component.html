@@ -1,27 +1,27 @@
 <div class="profile-container">
   <div class="profile-card-grid">
-
-    <div class="profile-card">
+    <!-- Your Profile Card -->
+    <div class="profile-card" [style.--i]="0">
       <div class="logo-sliced">Foodiee.<span>co</span></div>
       <div class="profile-icon">👤</div>
       <div class="profile-title">Your Profile</div>
 
-      <p class="profile-info">
+      <div class="profile-info">
         <label>Email:</label>
         <span>{{ user?.email }}</span>
-      </p>
+      </div>
 
-      <p class="profile-info">
+      <div class="profile-info">
         <label>Joined:</label>
         <span>{{ user?.joined | date: 'fullDate' }}</span>
-      </p>
+      </div>
     </div>
 
-    <div class="profile-card logout-card" (click)="logout()">
-      <div class="logout-icon">🚪</div>
+    <!-- Logout Card as Button -->
+    <div class="profile-card logout-card" [style.--i]="1" (click)="logout()" tabindex="0" role="button" aria-label="Logout">
+      <div class="logout-icon" aria-hidden="true">🚪</div>
       <div class="logout-title">Logout</div>
       <p class="logout-info">Sign out of your Foodiee account.</p>
     </div>
-
   </div>
 </div>

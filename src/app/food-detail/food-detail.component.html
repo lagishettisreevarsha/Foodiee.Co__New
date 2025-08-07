@@ -22,8 +22,9 @@
         <div class="ingredients">
           <h3>Ingredients</h3>
           <ul>
-            <li *ngFor="let item of foodItem?.ingredients">{{ item }}</li>
+            <li *ngFor="let item of foodItem?.ingredients; let i = index" [style.--i]="i">{{ item }}</li>
           </ul>
+
         </div>
       </div>
     </div>

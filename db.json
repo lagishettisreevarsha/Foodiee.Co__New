@@ -3,7 +3,7 @@
    {
       "id": 1,
       "title": "Pancakes",
-      "description": "**Fluffy pancakes topped with maple syrup and berries.**\n\n- Whisk together flour, baking powder, sugar, and a pinch of salt.\n- In another bowl, mix milk, eggs, and melted butter.\n- Combine both mixtures to form a smooth batter.\n- Heat a non-stick pan and pour batter to form pancakes.\n- Flip once bubbles form and cook until golden.\n- Serve with maple syrup and fresh berries.",
+      "description": "Fluffy pancakes topped with maple syrup and berries.\n\n- Whisk together flour, baking powder, sugar, and a pinch of salt.\n- In another bowl, mix milk, eggs, and melted butter.\n- Combine both mixtures to form a smooth batter.\n- Heat a non-stick pan and pour batter to form pancakes.\n- Flip once bubbles form and cook until golden.\n- Serve with maple syrup and fresh berries.",
       "category": "Breakfast",
       "image": "https://i.pinimg.com/736x/db/cf/e8/dbcfe8fc0888740fb884c860f799c3cd.jpg",
       "ingredients": ["Flour", "Eggs", "Milk", "Baking powder", "Maple syrup", "Berries"],
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "title": "Omelette",
-      "description": "**Cheese and veggie-loaded omelette.**\n\n- Crack eggs into a bowl, add salt and pepper, and whisk well.\n- Heat a pan with oil or butter.\n- Add chopped bell peppers and onions, sauté for a minute.\n- Pour in the eggs and let them set.\n- Sprinkle grated cheese on top.\n- Fold and cook till golden, then serve hot.",
+      "description": "Cheese and veggie-loaded omelette.\n\n- Crack eggs into a bowl, add salt and pepper, and whisk well.\n- Heat a pan with oil or butter.\n- Add chopped bell peppers and onions, sauté for a minute.\n- Pour in the eggs and let them set.\n- Sprinkle grated cheese on top.\n- Fold and cook till golden, then serve hot.",
       "category": "Breakfast",
       "image": "https://i.pinimg.com/736x/76/38/b1/7638b1a73552df2de22dfe10e1572073.jpg",
       "ingredients": ["Eggs", "Cheese", "Bell peppers", "Onions", "Salt", "Pepper"],
@@ -22,7 +22,7 @@
     {
       "id": 3,
       "title": "Avocado Toast",
-      "description": "**Crunchy toast topped with creamy seasoned avocado.**\n\n- Toast slices of bread to desired crispness.\n- Scoop out ripe avocados into a bowl.\n- Mash with lemon juice, salt, and chili flakes.\n- Spread the avocado mix over toast.\n- Garnish with extra chili flakes or herbs if desired.",
+      "description": "Crunchy toast topped with creamy seasoned avocado.\n\n- Toast slices of bread to desired crispness.\n- Scoop out ripe avocados into a bowl.\n- Mash with lemon juice, salt, and chili flakes.\n- Spread the avocado mix over toast.\n- Garnish with extra chili flakes or herbs if desired.",
       "category": "Breakfast",
       "image": "https://i.pinimg.com/736x/15/1e/ef/151eef778a3480c6fabdb948a10fb7b9.jpg",
       "ingredients": ["Bread", "Avocado", "Lemon", "Salt", "Chili flakes"]
@@ -30,7 +30,7 @@
     {
       "id": 4,
       "title": "Grilled Cheese Sandwich",
-      "description": "**Golden crispy sandwich with gooey melted cheese.**\n\n- Butter two slices of bread evenly on one side.\n- Place cheese slices between the unbuttered sides.\n- Heat a pan and grill until golden on both sides.\n- Press gently for even melting.\n- Slice and serve hot.",
+      "description": "Golden crispy sandwich with gooey melted cheese.\n\n- Butter two slices of bread evenly on one side.\n- Place cheese slices between the unbuttered sides.\n- Heat a pan and grill until golden on both sides.\n- Press gently for even melting.\n- Slice and serve hot.",
       "category": "Snacks",
       "image": "https://i.pinimg.com/736x/80/30/72/8030727314b1b950376d0dc83e249add.jpg",
       "ingredients": ["Bread", "Cheddar cheese", "Butter"]
@@ -38,7 +38,7 @@
     {
       "id": 5,
       "title": "Chicken Burger",
-      "description": "**Juicy grilled chicken burger with crisp veggies.**\n\n- Grill or pan-fry chicken patty until fully cooked.\n- Lightly toast burger buns.\n- Spread mayo on both sides of the bun.\n- Add lettuce, tomato slices, and the chicken patty.\n- Assemble and serve with fries or salad.",
+      "description": "Juicy grilled chicken burger with crisp veggies.\n\n- Grill or pan-fry chicken patty until fully cooked.\n- Lightly toast burger buns.\n- Spread mayo on both sides of the bun.\n- Add lettuce, tomato slices, and the chicken patty.\n- Assemble and serve with fries or salad.",
       "category": "Lunch",
       "image": "https://i.pinimg.com/736x/3d/72/bc/3d72bc224939ece8783abd2c3344e46f.jpg",
       "ingredients": ["Chicken patty", "Burger bun", "Lettuce", "Tomato", "Mayonnaise"]
@@ -46,7 +46,7 @@
     {
       "id": 6,
       "title": "Veggie Wrap",
-      "description": "**Healthy wrap packed with grilled veggies and hummus.**\n\n- Warm tortillas on a pan.\n- Grill bell peppers and zucchini until tender.\n- Spread hummus on the tortilla.\n- Add grilled veggies and lettuce.\n- Roll tightly into a wrap and serve sliced.",
+      "description": "Healthy wrap packed with grilled veggies and hummus.\n\n- Warm tortillas on a pan.\n- Grill bell peppers and zucchini until tender.\n- Spread hummus on the tortilla.\n- Add grilled veggies and lettuce.\n- Roll tightly into a wrap and serve sliced.",
       "category": "Lunch",
       "image": "https://i.pinimg.com/736x/3e/14/53/3e1453c708c27e90332df05aee03ce75.jpg",
       "ingredients": ["Tortilla", "Bell peppers", "Zucchini", "Hummus", "Lettuce"]
@@ -54,7 +54,7 @@
     {
       "id": 7,
       "title": "Spaghetti Bolognese",
-      "description": "**Classic Italian pasta with hearty meat sauce.**\n\n- Boil spaghetti until al dente, drain and set aside.\n- Sauté onions and garlic in olive oil.\n- Add ground beef and cook till browned.\n- Pour in tomato sauce and simmer.\n- Combine with spaghetti and serve hot with herbs or parmesan.",
+      "description": "Classic Italian pasta with hearty meat sauce.\n\n- Boil spaghetti until al dente, drain and set aside.\n- Sauté onions and garlic in olive oil.\n- Add ground beef and cook till browned.\n- Pour in tomato sauce and simmer.\n- Combine with spaghetti and serve hot with herbs or parmesan.",
       "category": "Dinner",
       "image": "https://i.pinimg.com/736x/e1/41/b9/e141b90cf7bfef38bb0da9838ef7921a.jpg",
       "ingredients": ["Spaghetti", "Ground beef", "Tomato sauce", "Onions", "Garlic"]
@@ -62,7 +62,7 @@
     {
       "id": 8,
       "title": "Butter Chicken",
-      "description": "**Rich and creamy Indian-style butter chicken.**\n\n- Marinate chicken in yogurt and spices.\n- Cook chicken until slightly charred.\n- Prepare sauce with butter, tomato puree, and cream.\n- Add chicken into the sauce and simmer.\n- Serve with naan or rice.",
+      "description": "Rich and creamy Indian-style butter chicken.\n\n- Marinate chicken in yogurt and spices.\n- Cook chicken until slightly charred.\n- Prepare sauce with butter, tomato puree, and cream.\n- Add chicken into the sauce and simmer.\n- Serve with naan or rice.",
       "category": "Dinner",
       "image": "https://i.pinimg.com/736x/e4/ee/46/e4ee465f7c751cf7cd10fc00fc875679.jpg",
       "ingredients": ["Chicken", "Butter", "Tomato puree", "Cream", "Spices"]
@@ -70,7 +70,7 @@
     {
       "id": 9,
       "title": "Margarita Pizza",
-      "description": "**Classic thin-crust pizza with tomato, mozzarella, and basil.**\n\n- Roll out pizza dough and spread tomato sauce.\n- Add mozzarella slices evenly.\n- Bake in a hot oven until crust is golden.\n- Top with fresh basil and a drizzle of olive oil.\n- Slice and serve hot.",
+      "description": "Classic thin-crust pizza with tomato, mozzarella, and basil.\n\n- Roll out pizza dough and spread tomato sauce.\n- Add mozzarella slices evenly.\n- Bake in a hot oven until crust is golden.\n- Top with fresh basil and a drizzle of olive oil.\n- Slice and serve hot.",
       "category": "Dinner",
       "image": "https://i.pinimg.com/736x/57/e7/a1/57e7a19334571946391a7430fcb86202.jpg",
       "ingredients": ["Pizza dough", "Tomato sauce", "Mozzarella", "Basil"]
@@ -78,7 +78,7 @@
     {
       "id": 10,
       "title": "Chocolate Cake",
-      "description": "**Moist chocolate sponge with rich cocoa flavor.**\n\n- Mix flour, cocoa powder, and sugar in a bowl.\n- Add eggs, melted butter, and milk to form batter.\n- Pour into a greased baking tin.\n- Bake until a toothpick comes out clean.\n- Frost with chocolate icing if desired.",
+      "description": "Moist chocolate sponge with rich cocoa flavor.\n\n- Mix flour, cocoa powder, and sugar in a bowl.\n- Add eggs, melted butter, and milk to form batter.\n- Pour into a greased baking tin.\n- Bake until a toothpick comes out clean.\n- Frost with chocolate icing if desired.",
       "category": "Dessert",
       "image": "https://i.pinimg.com/736x/f2/c9/a4/f2c9a4f119aaa41b5b790a1effa8a791.jpg",
       "ingredients": ["Flour", "Cocoa powder", "Sugar", "Eggs", "Butter", "Chocolate"]
@@ -86,7 +86,7 @@
     {
       "id": 11,
       "title": "Ice Cream Sundae",
-      "description": "**Delicious ice cream topped with syrup, nuts, and whipped cream.**\n\n- Scoop 2–3 flavors of ice cream into a bowl.\n- Drizzle chocolate or caramel syrup generously.\n- Add whipped cream on top.\n- Sprinkle chopped nuts.\n- Optionally top with a cherry.",
+      "description": "Delicious ice cream topped with syrup, nuts, and whipped cream.\n\n- Scoop 2–3 flavors of ice cream into a bowl.\n- Drizzle chocolate or caramel syrup generously.\n- Add whipped cream on top.\n- Sprinkle chopped nuts.\n- Optionally top with a cherry.",
       "category": "Dessert",
       "image": "https://i.pinimg.com/736x/4c/ce/cb/4ccecbda1a3804d2b65b90b862b3ca4c.jpg",
       "ingredients": ["Vanilla ice cream", "Chocolate syrup", "Chopped nuts", "Whipped cream"]
@@ -94,7 +94,7 @@
     {
       "id": 12,
       "title": "Fruit Salad",
-      "description": "**Refreshing medley of seasonal fruits.**\n\n- Chop apple, banana, mango, pineapple, and grapes.\n- Add them to a bowl with a dash of lemon juice.\n- Sprinkle mint leaves and mix well.\n- Chill for 15 minutes before serving.",
+      "description": "Refreshing medley of seasonal fruits.\n\n- Chop apple, banana, mango, pineapple, and grapes.\n- Add them to a bowl with a dash of lemon juice.\n- Sprinkle mint leaves and mix well.\n- Chill for 15 minutes before serving.",
       "category": "Dessert",
       "image": "https://i.pinimg.com/736x/a7/8d/db/a78ddb9404fb7777ff950932a15a967b.jpg",
       "ingredients": ["Apple", "Banana", "Mango", "Pineapple", "Grapes", "Mint"]

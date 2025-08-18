@@ -48,6 +48,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  
   toggleSave(id: number) {
     this.recipeService.isSaved(id)
       ? this.recipeService.unsaveItem(id)
@@ -73,6 +74,7 @@ export class HomeComponent implements OnInit {
       (!this.selectedCategory || item.category === this.selectedCategory) &&
       (!this.searchQuery || item.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
     );
+    console.log(this.filteredItems)
   }
 
   get allCategories(): any[] {

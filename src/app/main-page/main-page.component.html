@@ -24,12 +24,62 @@
 
   <div class="auth-box" *ngIf="showLogin || showSignup">
     <button class="back-btn-top" (click)="closeForm()">✕</button>
-    <h2>{{ isLoginMode ? 'Login' : 'Signup' }}</h2>
+    <h2>{{ isLoginMode ? 'Login' : 'Create Account' }}</h2>
 
-    <form (ngSubmit)="onSubmit()">
-      <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required />
-      <input type="password" [(ngModel)]="password" name="password" placeholder="Password" required />
-      <button type="submit">{{ isLoginMode ? 'Login' : 'Signup' }}</button>
+    <!-- Login Form -->
+    <form *ngIf="isLoginMode" (ngSubmit)="onSubmit()">
+      <input type="email" [(ngModel)]="email" name="email" placeholder="📧 Email" required />
+      <input type="password" [(ngModel)]="password" name="password" placeholder="🔒 Password" required />
+      <button type="submit">🚀 Login</button>
+    </form>
+
+    <!-- Enhanced Compact Signup Form -->
+    <form *ngIf="!isLoginMode" (ngSubmit)="onSubmit()" class="signup-form">
+      <div class="form-row">
+        <input type="text" [(ngModel)]="firstName" name="firstName" placeholder="👤 First Name" required />
+        <input type="text" [(ngModel)]="lastName" name="lastName" placeholder="👤 Last Name" required />
+      </div>
+      
+      <div class="form-row">
+        <input type="email" [(ngModel)]="email" name="email" placeholder="📧 Email" required />
+        <input type="tel" [(ngModel)]="mobileNumber" name="mobileNumber" placeholder="📱 Mobile" required />
+      </div>
+      
+      <div class="form-row">
+        <select [(ngModel)]="gender" name="gender" required>
+          <option value="">🎭 Gender</option>
+          <option value="male">👨 Male</option>
+          <option value="female">👩 Female</option>
+          <option value="other">🌈 Other</option>
+          <option value="prefer-not-to-say">🤐 Prefer not to say</option>
+        </select>
+        
+        <input type="date" [(ngModel)]="dateOfBirth" name="dateOfBirth" required />
+      </div>
+      
+      <!-- Profile Picture Upload -->
+      <div class="profile-upload-section">
+        <label class="file-upload-label">
+          <input type="file" 
+                 (change)="onFileSelected($event)" 
+                 accept="image/*" 
+                 class="file-input" />
+          <span class="upload-text">📸 Upload Profile Picture</span>
+        </label>
+        
+        <!-- Preview -->
+        <div *ngIf="profilePicPreview" class="profile-preview">
+          <img [src]="profilePicPreview" alt="Profile Preview" class="preview-img" />
+          <span class="preview-text">Preview</span>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <input type="password" [(ngModel)]="password" name="password" placeholder="🔒 Password" required />
+        <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="🔒 Confirm" required />
+      </div>
+      
+      <button type="submit">🚀 Create Account</button>
     </form>
 
     <p class="toggle">
@@ -38,5 +88,6 @@
     </p>
 
     <p *ngIf="errorMsg" class="error">{{ errorMsg }}</p>
+    <p *ngIf="successMsg" class="success">{{ successMsg }}</p>
   </div>
 </div>

@@ -1,27 +1,64 @@
 <div class="profile-container">
-  <div class="profile-card-grid">
-    <!-- Your Profile Card -->
-    <div class="profile-card" [style.--i]="0">
-      <div class="logo-sliced">Foodiee.<span>co</span></div>
-      <div class="profile-icon">👤</div>
-      <div class="profile-title">Your Profile</div>
-
-      <div class="profile-info">
-        <label>Email:</label>
-        <span>{{ user?.email }}</span>
+  <div class="profile-card">
+    <!-- Profile Picture and Basic Info -->
+    <div class="profile-header">
+      <div class="profile-picture">
+        <img [src]="user?.profilePic || 'https://via.placeholder.com/150/FF6B6B/FFFFFF?text=👤'" 
+             alt="Profile Picture" 
+             class="profile-img" />
       </div>
-
-      <div class="profile-info">
-        <label>Joined:</label>
-        <span>{{ user?.joined | date: 'fullDate' }}</span>
+      <div class="profile-basic-info">
+        <h2 class="profile-name">{{ user?.firstName }} {{ user?.lastName }}</h2>
+        <p class="profile-email">{{ user?.email }}</p>
+        <span class="account-type" [class]="user?.isPremium ? 'premium-badge' : 'standard-badge'">
+          {{ user?.isPremium ? '🌟 Premium' : '📱 Standard' }}
+        </span>
       </div>
     </div>
 
-    <!-- Logout Card as Button -->
-    <div class="profile-card logout-card" [style.--i]="1" (click)="logout()" tabindex="0" role="button" aria-label="Logout">
-      <div class="logout-icon" aria-hidden="true">🚪</div>
-      <div class="logout-title">Logout</div>
-      <p class="logout-info">Sign out of your Foodiee account.</p>
+    <!-- Profile Information -->
+    <div class="profile-details">
+      <h3 class="section-title">Personal Information</h3>
+      
+      <div class="info-grid">
+        <div class="info-item">
+          <label>First Name:</label>
+          <span>{{ user?.firstName || 'Not provided' }}</span>
+        </div>
+
+        <div class="info-item">
+          <label>Last Name:</label>
+          <span>{{ user?.lastName || 'Not provided' }}</span>
+        </div>
+
+        <div class="info-item">
+          <label>Mobile:</label>
+          <span>{{ user?.mobileNumber || 'Not provided' }}</span>
+        </div>
+
+        <div class="info-item">
+          <label>Gender:</label>
+          <span>{{ user?.gender || 'Not specified' }}</span>
+        </div>
+
+        <div class="info-item">
+          <label>Date of Birth:</label>
+          <span>{{ user?.dateOfBirth ? (user.dateOfBirth | date: 'mediumDate') : 'Not provided' }}</span>
+        </div>
+
+        <div class="info-item">
+          <label>Joined:</label>
+          <span>{{ user?.joined | date: 'fullDate' }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Small Logout Button -->
+    <div class="logout-section">
+      <button class="logout-btn" (click)="logout()">
+        <span class="logout-icon">🚪</span>
+        Logout
+      </button>
     </div>
   </div>
 </div>

@@ -29,8 +29,8 @@ export class UserService {
     return this.http.post(this.userUrl, user);
   }
 
-  // PUT update user
-  updateUser(id: number, user: any): Observable<any> {
+  // PUT update user via API
+  updateUserViaApi(id: number, user: any): Observable<any> {
     return this.http.put(`${this.userUrl}/${id}`, user);
   }
 
@@ -96,6 +96,23 @@ export class UserService {
   getUser() {
     if (typeof window === 'undefined') return {};
     return JSON.parse(localStorage.getItem('loggedInUser') || '{}');
+  }
+
+  // Update user in localStorage
+  updateUser(updatedUser: any): void {
+    if (typeof window === 'undefined') return;
+    
+    // Update logged in user
+    localStorage.setItem('loggedInUser', JSON.stringify(updatedUser));
+    
+    // Update in users array
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const userIndex = users.findIndex((u: any) => u.email === updatedUser.email);
+    
+    if (userIndex !== -1) {
+      users[userIndex] = updatedUser;
+      localStorage.setItem('users', JSON.stringify(users));
+    }
   }
 
   isLoggedIn(): boolean {

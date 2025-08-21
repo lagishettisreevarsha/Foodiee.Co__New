@@ -115,6 +115,121 @@
   margin-bottom: 1.5rem;
 }
 
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.edit-btn, .save-btn, .cancel-btn {
+  background: #ff7a00;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover, .save-btn:hover {
+  background: #e86800;
+  transform: translateY(-1px);
+}
+
+.cancel-btn {
+  background: #dc3545;
+  margin-left: 0.5rem;
+}
+
+.cancel-btn:hover {
+  background: #c82333;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-form {
+  margin-top: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #ff7a00;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.form-group input, .form-group select {
+  padding: 0.5rem;
+  border: 1px solid #ffe0c0;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: #ff7a00;
+  box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.1);
+}
+
+.profile-picture-section {
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid #fff0e0;
+}
+
+.picture-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.8rem;
+}
+
+.upload-btn, .remove-btn {
+  background: #ff7a00;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+  background: #e86800;
+  transform: translateY(-1px);
+}
+
+.remove-btn {
+  background: #dc3545;
+}
+
+.remove-btn:hover {
+  background: #c82333;
+}
+
 .section-title {
   font-size: 1.1rem;
   font-weight: 600;

@@ -11,7 +11,7 @@ export class FavoritesService {
 
   constructor(private http: HttpClient) {}
 
-  // ===== FAVORITES API ENDPOINTS =====
+  // ===== FAVORITES API ENDPOINTS ===== 
   
   // GET all favorites for a user
   getUserFavorites(userId: number): Observable<any[]> {

@@ -13,13 +13,25 @@
   </div>
 </nav>
 
+<!-- Hero Banner (static) -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Taste something new today</h1>
+    <p>Discover hand-picked recipes for every mood</p>
+    <div class="hero-cta">
+      <input type="text" placeholder="Search recipes…" [ngModel]="searchQuery" (ngModelChange)="onSearchChange($event)" />
+      <button (click)="onDiscover()">Discover</button>
+    </div>
+    <button class="scroll-hint" (click)="scrollToCards()" aria-label="Scroll to recipes">⌄</button>
+  </div>
+  <div class="hero-gradient"></div>
+</div>
+
 <!-- Main Content -->
 <div class="home-container">
   <div class="home-content">
-    <!-- Search -->
-    <div class="search-filter-bar">
-      <input type="text" placeholder="Search recipes..." [(ngModel)]="searchQuery" />
-    </div>
+    <div #cardsTop class="cards-anchor"></div>
+    <!-- Search moved to hero -->
 
     <!-- Category Filter -->
     <div class="category-toggles">
@@ -35,26 +47,41 @@
     </div>
 
     <!-- Food Cards -->
-    <div class="food-grid">
+    <div class="food-grid" *ngIf="!isLoading; else skeletons">
       <div class="food-card" *ngFor="let item of filteredItems()" (click)="goToFoodDetail(item.id)">
-        <img [src]="item.image" alt="{{ item.title }}" />
+        <div class="card-image-wrapper">
+          <img [src]="item.image" alt="{{ item.title }}" loading="lazy" />
+          <span class="category-badge" *ngIf="item.category">{{ item.category }}</span>
+        </div>
         <h3>{{ item.title }}</h3>
         <p>{{ item.description.split('\n')[0] }}</p>
 
-          <div class="card-actions">
-            <button (click)="toggleSave(item.id); $event.stopPropagation()">
-              {{ isSaved(item.id) ? '💾 Saved' : '💾 Save' }}
-            </button>
-            <button (click)="toggleFavorite(item.id); $event.stopPropagation()">
-              {{ isFavorited(item.id) ? '❤️ Favourited' : '🤍 Favourite' }}
-            </button>
-            <button *ngIf="isUploadedRecipe(item.id)" (click)="deleteRecipe(item.id); $event.stopPropagation()" class="delete-btn">
-              🗑️ Delete
-            </button>
-          </div>
-        
+        <div class="card-actions">
+          <button (click)="toggleSave(item.id); $event.stopPropagation()">
+            {{ isSaved(item.id) ? '💾 Saved' : '💾 Save' }}
+          </button>
+          <button (click)="toggleFavorite(item.id); $event.stopPropagation()">
+            {{ isFavorited(item.id) ? '❤️ Favourited' : '🤍 Favourite' }}
+          </button>
+          <button *ngIf="isUploadedRecipe(item.id)" (click)="deleteRecipe(item.id); $event.stopPropagation()" class="delete-btn">
+            🗑️ Delete
+          </button>
+        </div>
       </div>
     </div>
+
+    <ng-template #skeletons>
+      <div class="food-grid">
+        <div class="food-card skeleton" *ngFor="let _ of skeletonArray">
+          <div class="image-skeleton"></div>
+          <div class="title-skeleton"></div>
+          <div class="text-skeleton"></div>
+          <div class="actions-skeleton">
+            <div></div><div></div><div></div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -20,6 +20,11 @@ export class HomeComponent implements OnInit {
   foodItems: any[] = [];
   categories: string[] = [];
   showChatbot = false;
+  isLoading = true;
+  skeletonArray = Array.from({ length: 8 });
+
+  @ViewChild('cardsTop') cardsTopRef!: ElementRef<HTMLDivElement>;
+
 
   constructor(
     public router: Router,
@@ -39,12 +44,19 @@ export class HomeComponent implements OnInit {
 
   // ✅ This loads both uploaded + db.json recipes
   loadRecipes() {
-    this.foodService.getFoods().subscribe(data => {
-      const uploaded = this.recipeService.getUploadedRecipes();
-      this.foodItems = [...uploaded, ...data];
-      setTimeout(() => {
-        window.scrollTo(0, this.scrollService.getScrollPosition());
-      }, 0);
+    this.isLoading = true;
+    this.foodService.getFoods().subscribe({
+      next: data => {
+        const uploaded = this.recipeService.getUploadedRecipes();
+        this.foodItems = [...uploaded, ...data];
+        this.isLoading = false;
+        setTimeout(() => {
+          window.scrollTo(0, this.scrollService.getScrollPosition());
+        }, 0);
+      },
+      error: () => {
+        this.isLoading = false;
+      }
     });
   }
 
@@ -69,12 +81,33 @@ export class HomeComponent implements OnInit {
     return this.recipeService.isFavorited(id);
   }
 
+  // Search + discover helpers with auto scroll
+  onSearchChange(value: string): void {
+    this.searchQuery = value;
+    this.scrollToCards();
+  }
+
+  onDiscover(): void {
+    this.selectCategory('All');
+    this.scrollToCards();
+  }
+
+  scrollToCards(): void {
+    try {
+      if (this.cardsTopRef && this.cardsTopRef.nativeElement) {
+        const y = this.cardsTopRef.nativeElement.getBoundingClientRect().top + window.scrollY - 12;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    } catch {}
+  }
+
+  // Removed confetti and rotating hero code for a cleaner UI
+
   filteredItems() {
     return this.foodItems.filter(item =>
       (!this.selectedCategory || item.category === this.selectedCategory) &&
       (!this.searchQuery || item.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
     );
-    console.log(this.filteredItems)
   }
 
   get allCategories(): any[] {

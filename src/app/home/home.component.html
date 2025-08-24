@@ -5,11 +5,11 @@
     Foodiee<span>.co</span>
   </div>
 
-  <div class="nav-actions right-align-icons">
-    <span class="nav-icon" (click)="goToSaved()" title="Saved Recipes">💾</span>
-    <button class="nav-icon" title="Upload Recipe" (click)="goToUpload()">📤</button>
-    <span class="nav-icon" (click)="goToFavourites()" title="Favourited Recipes">❤️</span>
-    <span class="nav-icon" (click)="goToProfile()" title="Your Profile">👤</span>
+  <div class="nav-actions nav-links">
+    <button class="nav-link" (click)="goToSaved()" aria-label="Saved Recipes">Saved</button>
+    <button class="nav-link" (click)="goToUpload()" aria-label="Upload Recipe">Upload Recipe</button>
+    <button class="nav-link" (click)="goToFavourites()" aria-label="Favourited Recipes">Favourites</button>
+    <button class="nav-link" (click)="goToProfile()" aria-label="Your Profile">Profile</button>
   </div>
 </nav>
 

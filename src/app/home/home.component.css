@@ -23,6 +23,77 @@
   animation: navDropIn 0.5s cubic-bezier(.56,1.37,.64,1) 0.12s forwards;
 }
 
+/* ---------------- NAVBAR LINKS (text-based) ---------------- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: transparent;
+  color: #333;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.06s ease;
+}
+
+/* subtle underline on hover */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 7px;
+  height: 2px;
+  background: #ff7043;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.18s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  background: #ffe6de;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link:active {
+  transform: translateY(1px);
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid rgba(255, 112, 67, 0.7);
+  outline-offset: 2px;
+}
+
+/* Primary call-to-action */
+.nav-link.primary {
+  background: #ff7043;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(255, 112, 67, 0.25);
+}
+
+.nav-link.primary:hover {
+  background: #ff5a25;
+}
+
+.nav-link.primary::after { display: none; }
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .nav-link { padding: 8px 10px; }
+}
+
 /* ---------------- HERO ---------------- */
 .hero {
   position: relative;

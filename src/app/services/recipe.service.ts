@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,12 @@ export class RecipeService {
 
   private savedKey = '';
   private favKey = '';
+
+  // Reactive streams for app-wide updates
+  private savedIdsSubject = new BehaviorSubject<number[]>([]);
+  private favIdsSubject = new BehaviorSubject<number[]>([]);
+  public savedIds$ = this.savedIdsSubject.asObservable();
+  public favIds$ = this.favIdsSubject.asObservable();
 
   constructor(private http: HttpClient) {
     this.refreshUserKeys(); // Load items on service start
@@ -75,6 +82,7 @@ export class RecipeService {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem(this.savedKey);
       this.savedItems = saved ? JSON.parse(saved) : [];
+      this.savedIdsSubject.next([...this.savedItems]);
     }
   }
 
@@ -82,18 +90,21 @@ export class RecipeService {
     if (typeof window !== 'undefined') {
       const fav = localStorage.getItem(this.favKey);
       this.favoritedItems = fav ? JSON.parse(fav) : [];
+      this.favIdsSubject.next([...this.favoritedItems]);
     }
   }
 
   private updateSavedStorage() {
     if (typeof window !== 'undefined') {
       localStorage.setItem(this.savedKey, JSON.stringify(this.savedItems));
+      this.savedIdsSubject.next([...this.savedItems]);
     }
   }
 
   private updateFavStorage() {
     if (typeof window !== 'undefined') {
       localStorage.setItem(this.favKey, JSON.stringify(this.favoritedItems));
+      this.favIdsSubject.next([...this.favoritedItems]);
     }
   }
 
@@ -109,6 +120,10 @@ export class RecipeService {
   unsaveItem(id: number) {
     this.savedItems = this.savedItems.filter(item => item !== id);
     this.updateSavedStorage();
+  }
+
+  toggleSave(id: number) {
+    this.isSaved(id) ? this.unsaveItem(id) : this.saveItem(id);
   }
 
   isSaved(id: number): boolean {
@@ -129,6 +144,10 @@ export class RecipeService {
   unfavoriteItem(id: number) {
     this.favoritedItems = this.favoritedItems.filter(item => item !== id);
     this.updateFavStorage();
+  }
+
+  toggleFavorite(id: number) {
+    this.isFavorited(id) ? this.unfavoriteItem(id) : this.favoriteItem(id);
   }
 
   isFavorited(id: number): boolean {

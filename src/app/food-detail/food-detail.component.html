@@ -31,6 +31,38 @@
       <!-- Right: Ingredients -->
       <div class="info-column">
         <h2>{{ foodItem?.title }}</h2>
+        <!-- Actions: Save / Favorite -->
+        <div class="detail-actions" *ngIf="foodItem">
+          <button type="button" (click)="toggleSave(foodItem.id)">
+            {{ isSaved(foodItem.id) ? '💾 Saved' : '💾 Save' }}
+          </button>
+          <button type="button" (click)="toggleFavorite(foodItem.id)">
+            {{ isFavorited(foodItem.id) ? '❤️ Favourited' : '🤍 Favourite' }}
+          </button>
+        </div>
+        <!-- Rating Section -->
+        <div class="rating-wrap" *ngIf="foodItem">
+          <div class="rating-row">
+            <button class="star" type="button" *ngFor="let s of [1,2,3,4,5]"
+              [class.filled]="hoverRating ? s <= hoverRating : s <= currentUserRating"
+              (mouseenter)="setHover(s)" (mouseleave)="clearHover()"
+              (click)="submitRating(s)"
+              [attr.aria-label]="'Rate ' + s + ' star'">
+              ★
+            </button>
+          </div>
+          <div class="rating-meta">
+            <span class="avg">{{ averageRating || 0 }} / 5</span>
+            <span class="count">({{ ratingCount }} ratings)</span>
+            <span class="you" *ngIf="currentUserRating">• You rated: {{ currentUserRating }}</span>
+          </div>
+        </div>
+        <!-- Share Section -->
+        <div class="share-wrap" *ngIf="foodItem">
+          <button type="button" class="share-btn wa" (click)="shareWhatsApp()" aria-label="Share on WhatsApp">WhatsApp</button>
+          <button type="button" class="share-btn pin" (click)="sharePinterest()" aria-label="Share on Pinterest">Pinterest</button>
+          <button type="button" class="share-btn native" (click)="shareNative()" aria-label="Share">Share</button>
+        </div>
         <div class="ingredients">
           <h3>Ingredients</h3>
           <ul>

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RecipeService } from '../services/recipe.service';
+import { FoodService } from '../services/food.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-saved',
@@ -14,16 +16,26 @@ export class SavedComponent implements OnInit {
   allItems: any[] = [];
   savedItems: any[] = [];
 
-  constructor(private http: HttpClient, private recipeService: RecipeService) {}
+  private sub?: Subscription;
+  constructor(private foodService: FoodService, private recipeService: RecipeService) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('http://localhost:3000/foods').subscribe({
+    this.foodService.getFoods().subscribe({
       next: (data) => {
-        this.allItems = data;
-        const savedIds = this.recipeService.getSavedItems();
-        this.savedItems = this.allItems.filter(item => savedIds.includes(item.id));
+        const uploaded = this.recipeService.getUploadedRecipes();
+        this.allItems = [...uploaded, ...data];
+        this.computeSaved(this.recipeService.getSavedItems());
+        this.sub = this.recipeService.savedIds$.subscribe(ids => this.computeSaved(ids));
       },
       error: (err) => console.error('Fetch error:', err)
     });
+  }
+
+  private computeSaved(savedIds: number[]) {
+    this.savedItems = this.allItems.filter(item => savedIds.includes(item.id));
+  }
+
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
   }
 }

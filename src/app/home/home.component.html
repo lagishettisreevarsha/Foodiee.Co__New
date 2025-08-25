@@ -20,31 +20,17 @@
     <h1>Taste something new today</h1>
     <p>Discover hand-picked recipes for every mood</p>
     <div class="hero-cta">
-      <input type="text" placeholder="Search recipes…" [ngModel]="searchQuery" (ngModelChange)="onSearchChange($event)" />
+      <input type="text" placeholder="Search recipes…" [ngModel]="searchQuery" (ngModelChange)="onSearchChange($event)" (focus)="onSearchChange(searchQuery)" (blur)="clearSuggestions()" />
       <button (click)="onDiscover()">Discover</button>
+      <button class="theme-toggle" type="button" (click)="toggleTheme()" aria-label="Toggle theme">🌓</button>
     </div>
-
-    <!-- Trending label -->
-    <div class="mini-label" *ngIf="displayMiniItems.length">🔥 Trending</div>
-
-    <!-- Mini Carousel (small recipe thumbnails, infinite) -->
-    <div class="mini-carousel" *ngIf="displayMiniItems.length">
-      <button class="mini-arrow left" type="button" (click)="prevMini()" aria-label="Previous"></button>
-      <div
-        class="mini-track"
-        [style.transform]="'translateX(-' + (currentMiniIndex * MINI_CARD_STEP) + 'px)'"
-        [style.transition]="miniTransition"
-        (transitionend)="onMiniTransitionEnd()"
-      >
-        <div class="mini-card" *ngFor="let m of displayMiniItems" (click)="goToFoodDetail(m.id)" tabindex="0" role="button" [attr.aria-label]="m.title">
-          <div class="mini-thumb">
-            <img [src]="m.image" alt="{{ m.title }}" loading="lazy" />
-          </div>
-          <div class="mini-title" title="{{ m.title }}">{{ m.title }}</div>
-        </div>
-      </div>
-      <button class="mini-arrow right" type="button" (click)="nextMini()" aria-label="Next"></button>
-    </div>
+    <!-- Typeahead suggestions -->
+    <ul class="suggestions" *ngIf="suggestions.length">
+      <li *ngFor="let s of suggestions" (mousedown)="selectSuggestion(s)">
+        <img [src]="s.image" alt="" />
+        <span>{{ s.title }}</span>
+      </li>
+    </ul>
     <button class="scroll-hint" (click)="scrollToCards()" aria-label="Scroll to recipes">⌄</button>
   </div>
   <div class="hero-gradient"></div>

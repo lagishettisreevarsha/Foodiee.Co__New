@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RecipeService } from '../services/recipe.service';
+import { FoodService } from '../services/food.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-favourites',
@@ -13,17 +15,31 @@ import { RecipeService } from '../services/recipe.service';
 export class FavouritesComponent implements OnInit {
   allItems: any[] = [];
   favouritedItems: any[] = [];
+  private sub?: Subscription;
 
-  constructor(private http: HttpClient, private recipeService: RecipeService) {}
+  constructor(private foodService: FoodService, private recipeService: RecipeService) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('http://localhost:3000/foods').subscribe({
+    // Load API recipes
+    this.foodService.getFoods().subscribe({
       next: (data) => {
-        this.allItems = data;
-        const favIds = this.recipeService.getFavoritedItems();
-        this.favouritedItems = this.allItems.filter(item => favIds.includes(item.id));
+        // Merge uploaded local recipes
+        const uploaded = this.recipeService.getUploadedRecipes();
+        this.allItems = [...uploaded, ...data];
+        // Initial compute
+        this.computeFavourites(this.recipeService.getFavoritedItems());
+        // React to changes anywhere in app
+        this.sub = this.recipeService.favIds$.subscribe(ids => this.computeFavourites(ids));
       },
       error: (err) => console.error('Fetch error:', err)
     });
+  }
+
+  private computeFavourites(favIds: number[]) {
+    this.favouritedItems = this.allItems.filter(item => favIds.includes(item.id));
+  }
+
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
   }
 }

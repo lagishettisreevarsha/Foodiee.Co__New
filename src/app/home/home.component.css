@@ -97,8 +97,8 @@
 /* ---------------- HERO ---------------- */
 .hero {
   position: relative;
-  height: 55vh;
-  min-height: 320px;
+  height: 70vh;
+  min-height: 420px;
   border-radius: 18px;
   overflow: hidden;
   margin: 16px 0 22px;
@@ -130,105 +130,17 @@
   position: absolute;
   inset: 0;
   display: grid;
-  place-content: center;
+  align-content: center;
+  justify-items: center;
+  gap: 10px;
   text-align: center;
   color: #fff;
   z-index: 3;
   padding: 0 16px;
 }
 
-/* Mini carousel (inside hero, below search) */
-.mini-label {
-  margin: 10px auto 6px;
-  width: min(640px, 86vw);
-  color: #fff;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  font-size: 13px;
-  opacity: 0.95;
-}
-
-.mini-carousel {
-  margin-top: 14px;
-  width: min(640px, 86vw);
-  height: 110px;
-  overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  backdrop-filter: blur(6px);
-  position: relative;
-}
-
-.mini-track {
-  display: flex;
-  gap: 8px;
-  padding: 8px;
-  transition: transform 0.5s ease;
-  will-change: transform;
-}
-
-.mini-card {
-  width: 120px;
-  flex: 0 0 120px;
-  background: rgba(0,0,0,0.25);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 10px;
-  overflow: hidden;
-  color: #fff;
-}
-
-.mini-thumb img {
-  width: 100%;
-  height: 70px;
-  object-fit: cover;
-  display: block;
-}
-
-.mini-title {
-  font-size: 11.5px;
-  padding: 6px 8px 7px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  opacity: 0.95;
-}
-
-/* Arrows */
-.mini-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.35);
-  border: 1px solid rgba(255,255,255,0.25);
-  cursor: pointer;
-  z-index: 4;
-}
-.mini-arrow.left { left: 6px; }
-.mini-arrow.right { right: 6px; }
-.mini-arrow::before {
-  content: '';
-  display: block;
-  width: 8px;
-  height: 8px;
-  border-top: 2px solid #fff;
-  border-right: 2px solid #fff;
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-.mini-arrow.left::before { transform: translate(-50%, -50%) rotate(-135deg); }
-.mini-arrow:hover { background: rgba(0,0,0,0.5); }
-
 @media (max-width: 600px) {
-  .hero { height: 50vh; }
-  .mini-carousel { height: 100px; width: 92vw; }
-  .mini-card { width: 110px; flex-basis: 110px; }
+  .hero { height: 58vh; min-height: 360px; }
 }
 
 .scroll-hint {
@@ -301,16 +213,6 @@
 }
 
 .hero-cta button:hover { transform: translateY(-1px); background: #ff5a25; }
-
-/* Static hero background image for professional look */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1600&auto=format&fit=crop') no-repeat center/cover;
-  filter: saturate(1.05) brightness(0.9);
-  z-index: 0;
-}
 
 @keyframes navDropIn {
   from {

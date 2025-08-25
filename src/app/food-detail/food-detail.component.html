@@ -11,9 +11,21 @@
     <button class="back-btn" (click)="goBack()">← Back to Home</button>
 
     <div class="food-content">
-      <!-- Left: Video -->
+      <!-- Left: Media (YouTube > Video > Image) -->
       <div class="video-box">
-        <video controls [src]="foodItem?.video" class="food-video"></video>
+        <ng-container *ngIf="safeYoutubeUrl; else html5OrImage">
+          <div class="embed-wrap">
+            <iframe class="yt-embed" [src]="safeYoutubeUrl" title="Recipe Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </ng-container>
+        <ng-template #html5OrImage>
+          <ng-container *ngIf="foodItem?.video; else imageOnly">
+            <video controls [src]="foodItem?.video" class="food-video"></video>
+          </ng-container>
+          <ng-template #imageOnly>
+            <img [src]="foodItem?.image" [alt]="foodItem?.title" class="food-video" />
+          </ng-template>
+        </ng-template>
       </div>
 
       <!-- Right: Ingredients -->

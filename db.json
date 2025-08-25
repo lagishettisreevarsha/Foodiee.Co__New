@@ -322,6 +322,342 @@
       "category": "Beverages",
       "image": "https://i.pinimg.com/736x/ab/22/04/ab2204dc37b8570318ed08340d61cbbe.jpg",
       "ingredients": ["Lemon", "Water", "Sugar or Salt", "Mint leaves"]
+    },
+    {
+      "id": 41,
+      "title": "Veg Hakka Noodles",
+      "description": "**Street-style Indo-Chinese noodles tossed with veggies.**\n\n- Boil noodles till al dente and toss in oil.\n- Stir-fry garlic, spring onions, carrots, and capsicum.\n- Add soy sauce, vinegar, pepper, and salt.\n- Toss noodles on high flame for 2 minutes.\n- Garnish with spring onion greens.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/5c/8c/9d/5c8c9d9a3f34a1a7a7d5f0c9b562f7d6.jpg",
+      "ingredients": ["Hakka noodles", "Garlic", "Carrot", "Capsicum", "Soy sauce", "Vinegar", "Pepper"],
+      "youtube": "https://www.youtube.com/watch?v=2y1iK1a8A0M"
+    },
+    {
+      "id": 42,
+      "title": "Grilled Salmon Bowl",
+      "description": "**Juicy salmon fillet served with rice and greens.**\n\n- Marinate salmon with lemon, pepper, and olive oil.\n- Grill until flaky.\n- Steam rice and sauté greens.\n- Assemble bowl with rice, greens, salmon, and sesame.\n- Drizzle with soy-lime sauce.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/77/1a/7f/771a7f0f2e5dd0b3f7d3f2e7f2a4a3f1.jpg",
+      "ingredients": ["Salmon", "Rice", "Spinach", "Olive oil", "Lemon", "Soy sauce", "Sesame"],
+      "youtube": "https://www.youtube.com/shorts/hy4HdpaqZGs?feature=share"
+    },
+    {
+      "id": 43,
+      "title": "Chicken Caesar Salad",
+      "description": "**Classic Caesar with grilled chicken and crunchy croutons.**\n\n- Grill seasoned chicken breast and slice.\n- Toss romaine with Caesar dressing.\n- Add croutons and parmesan.\n- Top with chicken and cracked pepper.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/6b/0c/7b/6b0c7be0d1cf2a2b3f6b9f8a7e5d9f11.jpg",
+      "ingredients": ["Romaine", "Chicken", "Croutons", "Parmesan", "Caesar dressing", "Pepper"]
+    },
+    {
+      "id": 44,
+      "title": "Margherita Bruschetta",
+      "description": "**Toasted baguette topped with tomato, basil, and mozzarella.**\n\n- Toast baguette slices.\n- Mix diced tomato with basil, olive oil, and salt.\n- Top bread with mozzarella and tomato mix.\n- Broil briefly to melt and serve.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/23/3a/2d/233a2d2a7f4e4db7b30cf1f9f0d3a0f3.jpg",
+      "ingredients": ["Baguette", "Tomato", "Mozzarella", "Basil", "Olive oil"]
+    },
+    {
+      "id": 45,
+      "title": "Thai Green Curry",
+      "description": "**Fragrant coconut milk curry with vegetables.**\n\n- Sauté green curry paste in oil.\n- Add coconut milk and bring to simmer.\n- Add vegetables and tofu/chicken.\n- Season with fish sauce/salt and sugar.\n- Finish with basil and serve with jasmine rice.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/7a/f0/fe/7af0fe2c5e8a4a35b3a8df3a9a3c1b11.jpg",
+      "ingredients": ["Green curry paste", "Coconut milk", "Vegetables", "Basil", "Jasmine rice"],
+      "youtube": "https://www.youtube.com/watch?v=0v7wZp2w2E0"
+    },
+    {
+      "id": 46,
+      "title": "Shakshuka",
+      "description": "**Eggs poached in a spicy tomato-pepper sauce.**\n\n- Sauté onions and peppers with garlic.\n- Add tomatoes, paprika, and cumin; simmer.\n- Make wells and crack eggs in.\n- Cover and cook till set.\n- Garnish with parsley and serve with bread.",
+      "category": "Breakfast",
+      "image": "https://i.pinimg.com/736x/30/20/86/302086a0b4eec6d0daeb4a4c2a81b464.jpg",
+      "ingredients": ["Eggs", "Tomatoes", "Bell peppers", "Onion", "Garlic", "Paprika", "Cumin"],
+      "youtube": "https://www.youtube.com/watch?v=V7ZVhHqz2tM"
+    },
+    {
+      "id": 47,
+      "title": "Blueberry Smoothie",
+      "description": "**Creamy smoothie with blueberries and yogurt.**\n\n- Blend blueberries, banana, yogurt, and milk.\n- Add honey to taste.\n- Serve chilled with ice.",
+      "category": "Beverages",
+      "image": "https://i.pinimg.com/736x/0a/31/77/0a3177c0fd4c0ad53a8b3f2f1d1b42a9.jpg",
+      "ingredients": ["Blueberries", "Banana", "Yogurt", "Milk", "Honey"]
+    },
+    {
+      "id": 48,
+      "title": "Mediterranean Mezze Platter",
+      "description": "**An assortment of dips, breads, and fresh bites.**\n\n- Prepare hummus and tzatziki.\n- Slice cucumbers, tomatoes, and olives.\n- Warm pita and arrange with falafel.\n- Serve with olive oil and herbs.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/6d/3e/6a/6d3e6a4e3d4a2c7f0e2b9d6f3c1a2e7b.jpg",
+      "ingredients": ["Hummus", "Tzatziki", "Pita", "Falafel", "Olives", "Tomatoes", "Cucumber"]
+    },
+    {
+      "id": 49,
+      "title": "Pesto Pasta",
+      "description": "**Al dente pasta tossed in fresh basil pesto.**\n\n- Blend basil, pine nuts, garlic, parmesan, and olive oil.\n- Boil pasta and reserve some water.\n- Toss pasta with pesto and water.\n- Finish with extra parmesan.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/98/86/0c/98860c2e51de7d3f4f4bb21b9b3503fd.jpg",
+      "ingredients": ["Pasta", "Basil", "Pine nuts", "Parmesan", "Garlic", "Olive oil"],
+      "youtube": "https://www.youtube.com/watch?v=4qVtF7kZ9KQ"
+    },
+    {
+      "id": 50,
+      "title": "Tiramisu Cups",
+      "description": "**No-bake tiramisu served in individual cups.**\n\n- Whip mascarpone with cream and sugar.\n- Dip ladyfingers in coffee.\n- Layer cream and biscuits in cups.\n- Dust with cocoa and chill.",
+      "category": "Dessert",
+      "image": "https://i.pinimg.com/736x/84/7f/1f/847f1fc78a2b0362a1e4f0a2e55a5d12.jpg",
+      "ingredients": ["Mascarpone", "Cream", "Sugar", "Coffee", "Ladyfingers", "Cocoa"]
+    },
+    {
+      "id": 51,
+      "title": "Miso Ramen",
+      "description": "**Comforting bowl of ramen with miso broth.**\n\n- Sauté garlic and ginger; add miso and stock.\n- Simmer with soy and mirin.\n- Cook ramen separately.\n- Assemble with toppings: egg, corn, scallions, and nori.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/0f/9a/0f/0f9a0f9a5a3d4b2a8f7e1d4b3c2a1f6e.jpg",
+      "ingredients": ["Ramen", "Miso", "Chicken stock", "Soy sauce", "Mirin", "Egg", "Corn", "Scallions"],
+      "youtube": "https://www.youtube.com/watch?v=1URZ9b8oB1s"
+    },
+    {
+      "id": 52,
+      "title": "Greek Salad",
+      "description": "**Crisp salad with feta, olives, and a zesty dressing.**\n\n- Chop cucumbers, tomatoes, onions, and peppers.\n- Toss with olives and feta.\n- Dress with olive oil, lemon, and oregano.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/aa/6f/3d/aa6f3d9b7d3c2a1b4d5e6f7a8b9c0d1e.jpg",
+      "ingredients": ["Cucumber", "Tomato", "Onion", "Bell pepper", "Feta", "Olives", "Olive oil", "Lemon", "Oregano"]
+    },
+    {
+      "id": 53,
+      "title": "Stuffed Bell Peppers",
+      "description": "**Bell peppers filled with herbed rice and veggies.**\n\n- Hollow bell peppers.\n- Cook rice with herbs and veggies.\n- Stuff peppers and bake till tender.\n- Top with cheese (optional) and serve.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/5a/0c/3e/5a0c3ee3a4c1b2d3e4f5a6b7c8d9e0f1.jpg",
+      "ingredients": ["Bell peppers", "Rice", "Onion", "Tomato", "Garlic", "Herbs", "Cheese"]
+    },
+    {
+      "id": 54,
+      "title": "Butter Garlic Prawns",
+      "description": "**Juicy prawns tossed in butter, garlic, and herbs.**\n\n- Melt butter and sauté garlic.\n- Add prawns, salt, and pepper; cook till pink.\n- Finish with lemon and parsley.\n- Serve hot.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/61/50/9e/61509e8c2b3d4a5e8f9a0b1c2d3e4f5a.jpg",
+      "ingredients": ["Prawns", "Butter", "Garlic", "Lemon", "Parsley", "Salt", "Pepper"],
+      "youtube": "https://www.youtube.com/watch?v=ZpJtq6e0w7Q"
+    },
+    {
+      "id": 55,
+      "title": "Chia Pudding Parfait",
+      "description": "**Overnight chia pudding layered with fruits and nuts.**\n\n- Mix chia seeds with milk and honey; rest overnight.\n- Layer with yogurt and fruits.\n- Top with nuts and seeds.",
+      "category": "Breakfast",
+      "image": "https://i.pinimg.com/736x/1e/5c/9a/1e5c9a7d3f2b4c5d6e7f8a9b0c1d2e3f.jpg",
+      "ingredients": ["Chia seeds", "Milk", "Honey", "Yogurt", "Berries", "Nuts", "Seeds"]
+    },
+    {
+      "id": 56,
+      "title": "Veggie Quesadilla",
+      "description": "**Cheesy tortilla stuffed with veggies.**\n\n- Sauté onions, peppers, and corn.\n- Place on tortilla with cheese.\n- Fold and toast till golden.\n- Slice and serve with salsa.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/3f/2e/4c/3f2e4c5d6e7f8a9b0c1d2e3f4a5b6c7d.jpg",
+      "ingredients": ["Tortilla", "Cheese", "Onion", "Bell pepper", "Corn", "Salsa"]
+    },
+    {
+      "id": 57,
+      "title": "Banoffee Pie",
+      "description": "**Decadent pie with banana, toffee, and whipped cream.**\n\n- Make biscuit base with butter; chill.\n- Spread dulce de leche.\n- Layer banana slices.\n- Top with whipped cream and cocoa.",
+      "category": "Dessert",
+      "image": "https://i.pinimg.com/736x/2a/71/3b/2a713b9e8f9a0b1c2d3e4f5a6b7c8d9e.jpg",
+      "ingredients": ["Biscuits", "Butter", "Dulce de leche", "Banana", "Cream", "Cocoa"]
+    },
+    {
+      "id": 58,
+      "title": "Caprese Skewers",
+      "description": "**Bite-sized tomato, mozzarella, and basil skewers.**\n\n- Skewer cherry tomatoes, mini mozzarella, and basil.\n- Drizzle with olive oil and balsamic.\n- Season with salt and pepper.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/41/1f/2e/411f2ee3a4b5c6d7e8f9a0b1c2d3e4f5.jpg",
+      "ingredients": ["Cherry tomatoes", "Mozzarella", "Basil", "Olive oil", "Balsamic", "Salt", "Pepper"]
+    },
+    {
+      "id": 59,
+      "title": "Kathi Roll",
+      "description": "**Indian wrap with spiced fillings and green chutney.**\n\n- Cook roti/paratha.\n- Sauté spiced paneer/chicken with onions.\n- Spread green chutney and fill.\n- Roll tight and serve.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/64/19/8a/64198a7d5e3f4a5b6c7d8e9f0a1b2c3d.jpg",
+      "ingredients": ["Paratha", "Paneer or Chicken", "Onion", "Chutney", "Spices"],
+      "youtube": "https://www.youtube.com/watch?v=G5S8YpJt5Xg"
+    },
+    {
+      "id": 60,
+      "title": "Avocado Chocolate Mousse",
+      "description": "**Silky mousse made with avocado and cocoa.**\n\n- Blend ripe avocado with cocoa, milk, and honey.\n- Chill for 1 hour.\n- Serve with dark chocolate shavings.",
+      "category": "Dessert",
+      "image": "https://i.pinimg.com/736x/7c/3a/5f/7c3a5f6e2d1f4b5a6c7d8e9f0a1b2c3d.jpg",
+      "ingredients": ["Avocado", "Cocoa", "Milk", "Honey", "Dark chocolate"]
+    },
+    {
+      "id": 61,
+      "title": "Paneer Tikka",
+      "description": "**Smoky marinated paneer grilled to perfection.**\n\n- Marinate paneer with yogurt, spices, and lemon.\n- Skewer with onions and peppers.\n- Grill till charred.\n- Serve with mint chutney.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/12/34/56/1234567890abcdef1234567890abcdef.jpg",
+      "ingredients": ["Paneer", "Yogurt", "Garam masala", "Chili powder", "Lemon", "Onion", "Capsicum"],
+      "youtube": "https://www.youtube.com/watch?v=6N7o0vWwGmM"
+    },
+    {
+      "id": 62,
+      "title": "Quinoa Buddha Bowl",
+      "description": "**Nutritious bowl with quinoa, veggies, and tahini.**\n\n- Cook quinoa fluffy.\n- Roast sweet potato and chickpeas.\n- Assemble with greens, avocado, and tahini dressing.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/ab/cd/ef/abcdef1234567890abcdef1234567890.jpg",
+      "ingredients": ["Quinoa", "Sweet potato", "Chickpeas", "Spinach", "Avocado", "Tahini", "Lemon"]
+    },
+    {
+      "id": 63,
+      "title": "Beef Stir Fry",
+      "description": "**Tender beef with crisp veggies in savory sauce.**\n\n- Slice beef thin; marinate with soy and cornflour.\n- Stir-fry on high heat.\n- Add vegetables and sauce; toss.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/fe/dc/ba/fedcba0987654321fedcba0987654321.jpg",
+      "ingredients": ["Beef", "Soy sauce", "Cornflour", "Broccoli", "Bell pepper", "Garlic", "Ginger"],
+      "youtube": "https://www.youtube.com/watch?v=EoQ0b6wWZz8"
+    },
+    {
+      "id": 64,
+      "title": "Falafel Wrap",
+      "description": "**Crispy falafel wrapped with veggies and tahini.**\n\n- Blend chickpeas with herbs and spices; shape balls.\n- Fry till golden.\n- Wrap with salad, pickles, and tahini.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/11/22/33/11223344556677889900aabbccddeeff.jpg",
+      "ingredients": ["Chickpeas", "Parsley", "Coriander", "Garlic", "Cumin", "Pita", "Tahini"]
+    },
+    {
+      "id": 65,
+      "title": "Berry Parfait",
+      "description": "**Layers of yogurt, berries, and granola.**\n\n- Sweeten yogurt lightly.\n- Layer with mixed berries.\n- Finish with crunchy granola.",
+      "category": "Breakfast",
+      "image": "https://i.pinimg.com/736x/22/44/66/2244668800aabbccddeeff1122334455.jpg",
+      "ingredients": ["Yogurt", "Strawberries", "Blueberries", "Granola", "Honey"]
+    },
+    {
+      "id": 66,
+      "title": "Sushi Rolls",
+      "description": "**Simple maki rolls with cucumber and avocado.**\n\n- Cook sushi rice and season.\n- Spread on nori, add fillings.\n- Roll tight and slice.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/33/55/77/33557799aabbccddeeff001122334455.jpg",
+      "ingredients": ["Sushi rice", "Nori", "Cucumber", "Avocado", "Rice vinegar", "Soy sauce"],
+      "youtube": "https://www.youtube.com/watch?v=I7z1CkzR1jQ"
+    },
+    {
+      "id": 67,
+      "title": "Tomato Basil Soup",
+      "description": "**Creamy roasted tomato soup with basil.**\n\n- Roast tomatoes, onion, and garlic.\n- Blend with stock.\n- Simmer and finish with cream and basil.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/44/66/88/44668800ffeeddccbbaa998877665544.jpg",
+      "ingredients": ["Tomatoes", "Onion", "Garlic", "Vegetable stock", "Cream", "Basil"]
+    },
+    {
+      "id": 68,
+      "title": "Chicken Biryani",
+      "description": "**Aromatic layered rice with spiced chicken.**\n\n- Marinate chicken with yogurt and spices.\n- Parboil basmati rice.\n- Layer and dum-cook till fragrant.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/55/77/99/557799aabbccddeeff00112233445566.jpg",
+      "ingredients": ["Chicken", "Basmati rice", "Yogurt", "Onion", "Tomato", "Biryani masala", "Mint"],
+      "youtube": "https://www.youtube.com/watch?v=Gzj2m8p2kJ8"
+    },
+    {
+      "id": 69,
+      "title": "Avocado Toast",
+      "description": "**Classic smash on toast with chili flakes.**\n\n- Smash ripe avocado with lemon and salt.\n- Spread on toasted sourdough.\n- Top with chili flakes and sesame.",
+      "category": "Breakfast",
+      "image": "https://i.pinimg.com/736x/66/88/aa/6688aabbccddeeff0011223344556677.jpg",
+      "ingredients": ["Avocado", "Bread", "Lemon", "Chili flakes", "Sesame"]
+    },
+    {
+      "id": 70,
+      "title": "Chocolate Lava Cake",
+      "description": "**Molten-centered rich chocolate dessert.**\n\n- Make batter with chocolate and butter.\n- Bake till edges set, center gooey.\n- Serve warm with ice cream.",
+      "category": "Dessert",
+      "image": "https://i.pinimg.com/736x/77/99/bb/7799bbccddeeff001122334455667788.jpg",
+      "ingredients": ["Dark chocolate", "Butter", "Flour", "Sugar", "Eggs", "Vanilla"],
+      "youtube": "https://www.youtube.com/watch?v=Gx4e0i1l3lM"
+    },
+    {
+      "id": 71,
+      "title": "Mushroom Risotto",
+      "description": "**Creamy arborio rice with sautéed mushrooms.**\n\n- Sauté mushrooms; set aside.\n- Toast rice in butter; add stock gradually.\n- Stir till creamy; finish with parmesan.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/88/aa/cc/88aaccddeeff00112233445566778899.jpg",
+      "ingredients": ["Arborio rice", "Mushrooms", "Butter", "Stock", "Parmesan", "Onion", "Garlic"]
+    },
+    {
+      "id": 72,
+      "title": "Greek Yogurt Popsicles",
+      "description": "**Healthy frozen pops with fruit swirls.**\n\n- Mix yogurt with honey.\n- Swirl in fruit puree.\n- Freeze in molds.",
+      "category": "Dessert",
+      "image": "https://i.pinimg.com/736x/99/bb/dd/99bbddeeff00112233445566778899aa.jpg",
+      "ingredients": ["Greek yogurt", "Honey", "Fruit puree"]
+    },
+    {
+      "id": 73,
+      "title": "Teriyaki Chicken",
+      "description": "**Sticky-sweet teriyaki glazed chicken.**\n\n- Sear chicken till golden.\n- Simmer with teriyaki sauce.\n- Reduce to glaze.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/aa/cc/ee/aaccee00112233445566778899aabbcc.jpg",
+      "ingredients": ["Chicken", "Soy sauce", "Mirin", "Sugar", "Ginger", "Garlic"],
+      "youtube": "https://www.youtube.com/watch?v=2gkXr3mB3g8"
+    },
+    {
+      "id": 74,
+      "title": "Bruschetta Trio",
+      "description": "**Three-flavor bruschetta platter.**\n\n- Classic tomato-basil.\n- Mushroom-garlic.\n- Ricotta-honey-pepper.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/bb/dd/ff/bbddeeff00112233445566778899aabb.jpg",
+      "ingredients": ["Baguette", "Tomato", "Basil", "Mushroom", "Garlic", "Ricotta", "Honey", "Pepper"]
+    },
+    {
+      "id": 75,
+      "title": "Pancake Stack",
+      "description": "**Fluffy pancakes with maple syrup.**\n\n- Whisk batter gently.\n- Cook on medium till bubbles.\n- Stack with butter and syrup.",
+      "category": "Breakfast",
+      "image": "https://i.pinimg.com/736x/cc/ee/00/ccee00112233445566778899aabbccdd.jpg",
+      "ingredients": ["Flour", "Milk", "Eggs", "Sugar", "Baking powder", "Butter", "Maple syrup"]
+    },
+    {
+      "id": 76,
+      "title": "Veg Pulao",
+      "description": "**Fragrant one-pot vegetable rice.**\n\n- Sauté whole spices and vegetables.\n- Add soaked rice and water.\n- Cook till fluffy.",
+      "category": "Lunch",
+      "image": "https://i.pinimg.com/736x/dd/ff/11/ddff112233445566778899aabbccddeeff.jpg",
+      "ingredients": ["Basmati rice", "Peas", "Carrot", "Beans", "Cumin", "Bay leaf", "Ghee"]
+    },
+    {
+      "id": 77,
+      "title": "BBQ Pulled Pork Sandwich",
+      "description": "**Slow-cooked pork with tangy BBQ sauce.**\n\n- Slow cook pork shoulder with spices.\n- Shred and mix with BBQ sauce.\n- Serve in buns with slaw.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/ee/00/22/ee0022446688aabbccddeeff00112233.jpg",
+      "ingredients": ["Pork shoulder", "BBQ sauce", "Buns", "Slaw", "Pickles"],
+      "youtube": "https://www.youtube.com/watch?v=6b1wz8m6JpM"
+    },
+    {
+      "id": 78,
+      "title": "Cucumber Mint Cooler",
+      "description": "**Refreshing summer drink with cucumber and mint.**\n\n- Blend cucumber with water and mint.\n- Strain and sweeten.\n- Serve over ice with lime.",
+      "category": "Beverages",
+      "image": "https://i.pinimg.com/736x/ff/11/33/ff1133557799aabbccddeeff00112244.jpg",
+      "ingredients": ["Cucumber", "Mint", "Water", "Sugar", "Lime"]
+    },
+    {
+      "id": 79,
+      "title": "Spinach Corn Sandwich",
+      "description": "**Cheesy spinach-corn filling grilled in bread.**\n\n- Sauté spinach and corn with garlic.\n- Mix with white sauce/cheese.\n- Grill between bread slices.",
+      "category": "Snacks",
+      "image": "https://i.pinimg.com/736x/10/22/44/1022446688aabbccddeeff0011223344.jpg",
+      "ingredients": ["Bread", "Spinach", "Corn", "Butter", "Cheese", "Garlic"]
+    },
+    {
+      "id": 80,
+      "title": "Shrimp Pad Thai",
+      "description": "**Thai rice noodles with tamarind, eggs, and shrimp.**\n\n- Soak rice noodles.\n- Stir-fry shrimp and aromatics.\n- Add eggs, noodles, tamarind sauce, and toss.\n- Finish with peanuts and lime.",
+      "category": "Dinner",
+      "image": "https://i.pinimg.com/736x/20/40/60/20406080aabbccddeeff001122334455.jpg",
+      "ingredients": ["Rice noodles", "Shrimp", "Eggs", "Tamarind", "Fish sauce", "Peanuts", "Lime"],
+      "youtube": "https://www.youtube.com/watch?v=F0n2bJcJxwE"
     }
   ],
   "categories": [

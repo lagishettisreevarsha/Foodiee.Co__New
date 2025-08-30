@@ -7,40 +7,40 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   private baseUrl = 'http://localhost:2661/api';
-  private authUrl = `${this.baseUrl}/Auth`;
+  private authUrl = `${this.baseUrl}/Account`;
 
   constructor(private http: HttpClient) {}
 
   // ===== AUTHENTICATION API ENDPOINTS =====
-  
-  // Login via API
-  login(email: string, password: string): Observable<any> {
+
+  // Login via API (returns plain text like "Logged in")
+  login(email: string, password: string): Observable<string> {
     const loginData = { email, password };
-    return this.http.post(`${this.authUrl}/Login`, loginData);
+    return this.http.post(`${this.authUrl}/login`, loginData, { responseType: 'text' as 'text' });
   }
 
-  // Register via API
-  register(userData: any): Observable<any> {
-    return this.http.post(`${this.authUrl}/Register`, userData);
+  // Register via API (returns plain text like "Registered")
+  register(userData: any): Observable<string> {
+    return this.http.post(`${this.authUrl}/register`, userData, { responseType: 'text' as 'text' });
   }
 
   // Get current user from API
   getCurrentUser(): Observable<any> {
-    return this.http.get(`${this.authUrl}/Me`);
+    return this.http.get(`${this.authUrl}/me`);
   }
 
   // Refresh token
   refreshToken(): Observable<any> {
-    return this.http.post(`${this.authUrl}/RefreshToken`, {});
+    return this.http.post(`${this.authUrl}/refreshToken`, {});
   }
 
   // Logout via API
   logoutApi(): Observable<any> {
-    return this.http.post(`${this.authUrl}/Logout`, {});
+    return this.http.post(`${this.authUrl}/logout`, {});
   }
 
   // ===== LOCAL STORAGE METHODS (for backward compatibility) =====
-  
+
   getLoggedInUser(): any {
     if (typeof window === 'undefined') return null;
     const userJson = localStorage.getItem('loggedInUser');
@@ -58,7 +58,7 @@ export class AuthService {
   }
 
   // ===== TOKEN MANAGEMENT =====
-  
+
   setToken(token: string): void {
     if (typeof window !== 'undefined') {
       localStorage.setItem('authToken', token);
@@ -77,7 +77,7 @@ export class AuthService {
   }
 
   // ===== USER SESSION =====
-  
+
   setUserSession(user: any, token: string): void {
     if (typeof window !== 'undefined') {
       localStorage.setItem('loggedInUser', JSON.stringify(user));

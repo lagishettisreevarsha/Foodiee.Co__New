@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../services/user.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-main-page',
@@ -35,6 +36,7 @@ export class MainPageComponent implements OnInit {
 
   constructor(
     private userService: UserService,
+    private authService: AuthService,
     public router: Router,
     private route: ActivatedRoute
   ) {}
@@ -157,43 +159,72 @@ export class MainPageComponent implements OnInit {
     this.successMsg = '';
 
     if (this.isLoginMode) {
-      // Login logic
+      // API Login
       if (!this.email || !this.password) {
         this.errorMsg = 'Please fill in all fields';
         return;
       }
       
-      const success = this.userService.login(this.email, this.password);
-      if (success) {
-        this.router.navigate(['/home']);
-      } else {
-        this.errorMsg = 'Invalid credentials!';
-      }
+      this.authService.login(this.email, this.password).subscribe({
+        next: () => {
+          // Minimal session for app guards/UI
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('loggedInUser', JSON.stringify({ email: this.email }));
+          }
+          this.router.navigate(['/home']);
+        },
+        error: (err) => {
+          const status = err?.status;
+          const body = typeof err?.error === 'string' ? err.error : (err?.message || '');
+          this.errorMsg = status ? `Login failed (${status}): ${body || 'Unexpected error'}` : (body || 'Login failed');
+        }
+      });
     } else {
-      // Signup logic
+      // API Signup -> map to RegisterDTO
       if (!this.validateSignupForm()) {
         return;
       }
 
-      const success = this.userService.signup({
-        email: this.email,
-        password: this.password,
+      const payload = {
         firstName: this.firstName,
         lastName: this.lastName,
-        mobileNumber: this.mobileNumber,
-        gender: this.gender,
-        dateOfBirth: this.dateOfBirth,
-        profilePic: this.profilePicPreview || 'https://via.placeholder.com/150/FF6B6B/FFFFFF?text=👤'
+        email: this.email,
+        phoneNumber: this.mobileNumber,
+        password: this.password,
+        confirmPassword: this.confirmPassword
+      };
+      
+      this.authService.register(payload).subscribe({
+        next: () => {
+          this.successMsg = 'Account created successfully! Redirecting...';
+          setTimeout(() => {
+            // Optionally auto-login, but here just go to login mode
+            this.isLoginMode = true;
+            this.showSignup = false;
+            this.showLogin = true;
+            this.clearForm();
+          }, 1200);
+        },
+        error: (err) => {
+          const status = err?.status;
+          const apiErr = err?.error;
+          if (apiErr?.errors) {
+            try {
+              const messages = Object.values(apiErr.errors as any)
+                .flat()
+                .join(' ');
+              this.errorMsg = messages || `Signup failed (${status || ''})`;
+            } catch {
+              this.errorMsg = `Signup failed (${status || ''})`;
+            }
+          } else if (typeof apiErr === 'string') {
+            this.errorMsg = status ? `Signup failed (${status}): ${apiErr}` : apiErr;
+          } else {
+            const bodyMsg = err?.message || '';
+            this.errorMsg = status ? `Signup failed (${status}): ${bodyMsg || 'Unexpected error'}` : (bodyMsg || 'Signup failed');
+          }
+        }
       });
-
-      if (success) {
-        this.successMsg = 'Account created successfully! Redirecting...';
-        setTimeout(() => {
-          this.router.navigate(['/home']);
-        }, 2000);
-      } else {
-        this.errorMsg = 'User already exists!';
-      }
     }
   }
 

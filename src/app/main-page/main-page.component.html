@@ -28,25 +28,25 @@
 
     <!-- Login Form -->
     <form *ngIf="isLoginMode" (ngSubmit)="onSubmit()">
-      <input type="email" [(ngModel)]="email" name="email" placeholder="📧 Email" required />
-      <input type="password" [(ngModel)]="password" name="password" placeholder="🔒 Password" required />
+      <input type="email" [(ngModel)]="email" name="email" placeholder="📧 Email" required autocomplete="email" />
+      <input type="password" [(ngModel)]="password" name="password" placeholder="🔒 Password" required autocomplete="current-password" />
       <button type="submit">🚀 Login</button>
     </form>
 
     <!-- Enhanced Compact Signup Form -->
     <form *ngIf="!isLoginMode" (ngSubmit)="onSubmit()" class="signup-form">
       <div class="form-row">
-        <input type="text" [(ngModel)]="firstName" name="firstName" placeholder="👤 First Name" required />
-        <input type="text" [(ngModel)]="lastName" name="lastName" placeholder="👤 Last Name" required />
+        <input type="text" [(ngModel)]="firstName" name="firstName" placeholder="👤 First Name" required autocomplete="given-name" />
+        <input type="text" [(ngModel)]="lastName" name="lastName" placeholder="👤 Last Name" required autocomplete="family-name" />
       </div>
       
       <div class="form-row">
-        <input type="email" [(ngModel)]="email" name="email" placeholder="📧 Email" required />
-        <input type="tel" [(ngModel)]="mobileNumber" name="mobileNumber" placeholder="📱 Mobile" required />
+        <input type="email" [(ngModel)]="email" name="email" placeholder="📧 Email" required autocomplete="email" />
+        <input type="tel" [(ngModel)]="mobileNumber" name="mobileNumber" placeholder="📱 Mobile" required autocomplete="tel-national" />
       </div>
       
       <div class="form-row">
-        <select [(ngModel)]="gender" name="gender" required>
+        <select [(ngModel)]="gender" name="gender" required autocomplete="sex">
           <option value="">🎭 Gender</option>
           <option value="male">👨 Male</option>
           <option value="female">👩 Female</option>
@@ -54,7 +54,7 @@
           <option value="prefer-not-to-say">🤐 Prefer not to say</option>
         </select>
         
-        <input type="date" [(ngModel)]="dateOfBirth" name="dateOfBirth" required />
+        <input type="date" [(ngModel)]="dateOfBirth" name="dateOfBirth" required autocomplete="bday" />
       </div>
       
       <!-- Profile Picture Upload -->
@@ -63,7 +63,7 @@
           <input type="file" 
                  (change)="onFileSelected($event)" 
                  accept="image/*" 
-                 class="file-input" />
+                 class="file-input" autocomplete="photo" />
           <span class="upload-text">📸 Upload Profile Picture</span>
         </label>
         
@@ -75,8 +75,8 @@
       </div>
       
       <div class="form-row">
-        <input type="password" [(ngModel)]="password" name="password" placeholder="🔒 Password" required />
-        <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="🔒 Confirm" required />
+        <input type="password" [(ngModel)]="password" name="password" placeholder="🔒 Password" required autocomplete="new-password" />
+        <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="🔒 Confirm" required autocomplete="new-password" />
       </div>
       
       <button type="submit">🚀 Create Account</button>

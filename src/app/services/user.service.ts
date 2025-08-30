@@ -130,19 +130,19 @@ export class UserService {
 
   // ===== API AUTHENTICATION =====
   
-  // Login via API
-  loginViaApi(email: string, password: string): Observable<any> {
+  // Login via API (AccountController, returns plain text)
+  loginViaApi(email: string, password: string): Observable<string> {
     const loginData = { email, password };
-    return this.http.post(`${this.baseUrl}/Auth/Login`, loginData);
+    return this.http.post(`${this.baseUrl}/Account/login`, loginData, { responseType: 'text' as 'text' });
   }
 
-  // Signup via API
-  signupViaApi(userData: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/Auth/Register`, userData);
+  // Signup via API (AccountController, returns plain text)
+  signupViaApi(userData: any): Observable<string> {
+    return this.http.post(`${this.baseUrl}/Account/register`, userData, { responseType: 'text' as 'text' });
   }
 
-  // Get current user from API
+  // Get current user from API (not implemented on backend demo)
   getCurrentUserFromApi(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/Auth/Me`);
+    return this.http.get(`${this.baseUrl}/Account/me`);
   }
 }

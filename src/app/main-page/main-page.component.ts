@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -12,7 +12,7 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css']
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit, OnDestroy {
   showLogin = false;
   showSignup = false;
   isLoginMode = true;
@@ -33,6 +33,7 @@ export class MainPageComponent implements OnInit {
 
   errorMsg = '';
   successMsg = '';
+  private prevThemeWasDark = false;
 
   constructor(
     private userService: UserService,
@@ -42,11 +43,15 @@ export class MainPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Ensure main page always shows in light theme
+    if (typeof document !== 'undefined') {
+      this.prevThemeWasDark = document.body.classList.contains('dark-theme');
+      document.body.classList.remove('dark-theme');
+    }
     // Redirect to home if already logged in
     if (this.userService.isLoggedIn()) {
       this.router.navigate(['/home'], { replaceUrl: true });
     }
-
     // Show error if redirected from protected page
     this.route.queryParams.subscribe(params => {
       if (params['error'] === 'unauthorized') {
@@ -55,6 +60,13 @@ export class MainPageComponent implements OnInit {
         this.isLoginMode = true;
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    // Restore dark theme if it was previously on
+    if (typeof document !== 'undefined' && this.prevThemeWasDark) {
+      document.body.classList.add('dark-theme');
+    }
   }
 
   toggleMode() {

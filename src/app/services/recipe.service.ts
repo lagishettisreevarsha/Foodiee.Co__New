@@ -12,9 +12,8 @@ export class RecipeService {
   
   private savedItems: number[] = [];
   private favoritedItems: number[] = [];
-
-  private savedKey = '';
-  private favKey = '';
+  // Track current user context derived from localStorage
+  private currentUserId = '';
 
   // Reactive streams for app-wide updates
   private savedIdsSubject = new BehaviorSubject<number[]>([]);
@@ -23,7 +22,7 @@ export class RecipeService {
   public favIds$ = this.favIdsSubject.asObservable();
 
   constructor(private http: HttpClient) {
-    this.refreshUserKeys(); // Load items on service start
+    this.ensureUserContext(); // Initialize based on current user
   }
 
   // ===== RECIPE API ENDPOINTS =====
@@ -64,18 +63,24 @@ export class RecipeService {
   }
 
   // ===== LOCAL STORAGE METHODS (for backward compatibility) =====
-  
-  refreshUserKeys() {
-    if (typeof window !== 'undefined') {
-      const user = JSON.parse(localStorage.getItem('loggedInUser') || '{}');
-      const id = user?.email || 'guest';
-
-      this.savedKey = `savedItems_${id}`;
-      this.favKey = `favoritedItems_${id}`;
-
+  // Auto-switch context when the logged-in user changes (no manual refresh needed)
+  private ensureUserContext() {
+    if (typeof window === 'undefined') return;
+    const user = JSON.parse(localStorage.getItem('loggedInUser') || '{}');
+    const id = user?.email || 'guest';
+    if (id !== this.currentUserId) {
+      this.currentUserId = id;
       this.loadSaved();
       this.loadFavorited();
     }
+  }
+
+  private get savedKey(): string {
+    return `savedItems_${this.currentUserId || 'guest'}`;
+  }
+
+  private get favKey(): string {
+    return `favoritedItems_${this.currentUserId || 'guest'}`;
   }
 
   private loadSaved() {
@@ -111,6 +116,7 @@ export class RecipeService {
   // ===== SAVE/FAVORITE METHODS =====
   
   saveItem(id: number) {
+    this.ensureUserContext();
     if (!this.savedItems.includes(id)) {
       this.savedItems.push(id);
       this.updateSavedStorage();
@@ -118,23 +124,28 @@ export class RecipeService {
   }
 
   unsaveItem(id: number) {
+    this.ensureUserContext();
     this.savedItems = this.savedItems.filter(item => item !== id);
     this.updateSavedStorage();
   }
 
   toggleSave(id: number) {
+    this.ensureUserContext();
     this.isSaved(id) ? this.unsaveItem(id) : this.saveItem(id);
   }
 
   isSaved(id: number): boolean {
+    this.ensureUserContext();
     return this.savedItems.includes(id);
   }
 
   getSavedItems(): number[] {
+    this.ensureUserContext();
     return this.savedItems;
   }
 
   favoriteItem(id: number) {
+    this.ensureUserContext();
     if (!this.favoritedItems.includes(id)) {
       this.favoritedItems.push(id);
       this.updateFavStorage();
@@ -142,19 +153,23 @@ export class RecipeService {
   }
 
   unfavoriteItem(id: number) {
+    this.ensureUserContext();
     this.favoritedItems = this.favoritedItems.filter(item => item !== id);
     this.updateFavStorage();
   }
 
   toggleFavorite(id: number) {
+    this.ensureUserContext();
     this.isFavorited(id) ? this.unfavoriteItem(id) : this.favoriteItem(id);
   }
 
   isFavorited(id: number): boolean {
+    this.ensureUserContext();
     return this.favoritedItems.includes(id);
   }
 
   getFavoritedItems(): number[] {
+    this.ensureUserContext();
     return this.favoritedItems;
   }
 

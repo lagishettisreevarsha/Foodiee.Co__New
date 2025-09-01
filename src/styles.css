@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+  --card-bg: #ffffff;
+  --border: #e6e6e6;
+  --accent: #ff7043;
+  --accent-hover: #ff5a25;
+  --accent-contrast: #ffffff;
+  --muted: #f7f7f7;
+  --muted-text: #666666;
+}
+
+body.dark-theme {
+  --bg: #0b0f14;           /* darker page bg */
+  --text: #eaeef2;         /* brighter text for readability */
+  --card-bg: #121821;      /* elevated surface */
+  --border: #2a394f;       /* clearer borders */
+  --accent: #ff8a50;
+  --accent-hover: #ffa06f;
+  --accent-contrast: #0b0f14;
+  --muted: #0f151d;        /* subtle muted bg */
+  --muted-text: #b7c3d4;   /* higher-contrast muted text */
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+}

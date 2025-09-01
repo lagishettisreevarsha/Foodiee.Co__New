@@ -22,7 +22,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   categories: string[] = [];
   showChatbot = false;
   isLoading = true;
-  skeletonArray = Array.from({ length: 8 });
+  skeletonArray = Array.from({ length: 16 });
+
+  // Pagination state
+  currentPage = 1;
+  pageSize = 16; // items per page
 
   // Hero carousel images (fresh curated set)
   heroImages: string[] = [
@@ -75,6 +79,8 @@ export class HomeComponent implements OnInit, OnDestroy {
         const uploaded = this.recipeService.getUploadedRecipes();
         this.foodItems = [...uploaded, ...data];
         this.isLoading = false;
+        // reset pagination when data reloads
+        this.currentPage = 1;
         setTimeout(() => {
           window.scrollTo(0, this.scrollService.getScrollPosition());
         }, 0);
@@ -111,11 +117,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   onSearchChange(value: string): void {
     this.searchQuery = value;
     this.updateSuggestions();
+    this.currentPage = 1; // reset pagination on search
   }
 
   onDiscover(): void {
     this.selectCategory('All');
     this.scrollToCards();
+  }
+
+  // Navigate to full Explore page
+  goToExplore(): void {
+    this.router.navigate(['/explore']);
   }
 
   scrollToCards(): void {
@@ -136,10 +148,35 @@ export class HomeComponent implements OnInit, OnDestroy {
     );
   }
 
+  // Paginated items derived from current filters
+  paginatedItems() {
+    const start = (this.currentPage - 1) * this.pageSize;
+    return this.filteredItems().slice(start, start + this.pageSize);
+  }
+
+  get totalPages(): number {
+    const total = this.filteredItems().length;
+    return Math.max(1, Math.ceil(total / this.pageSize));
+  }
+
+  get pageNumbers(): number[] {
+    const pages = this.totalPages;
+    return Array.from({ length: pages }, (_, i) => i + 1);
+  }
+
+  goToPage(page: number) {
+    if (page < 1 || page > this.totalPages) return;
+    this.currentPage = page;
+    this.scrollToCards();
+  }
+
+  nextPage() { this.goToPage(this.currentPage + 1); }
+  prevPage() { this.goToPage(this.currentPage - 1); }
+
   // Typeahead suggestions: top 5 by title match
   private updateSuggestions() {
     const q = this.searchQuery.trim().toLowerCase();
-    if (!q) { this.suggestions = []; return; }
+    if (!q || q.length < 2) { this.suggestions = []; return; }
     this.suggestions = this.foodItems
       .filter(i => i.title && i.title.toLowerCase().includes(q))
       .slice(0, 5);
@@ -168,6 +205,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   selectCategory(category: any) {
     const cat = category.name || category;
     this.selectedCategory = cat === 'All' ? '' : cat;
+    this.currentPage = 1; // reset on category change
   }
 
   goToFoodDetail(id: number) {
@@ -209,14 +247,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     };
     localStorage.setItem('loggedInUser', JSON.stringify(user));
     alert('Logged in as User');
-    this.recipeService.refreshUserKeys(); // refresh keys
     this.loadRecipes(); // reload with correct user context
   }
 
   mockLogout() {
     localStorage.removeItem('loggedInUser');
     alert('Logged out!');
-    this.recipeService.refreshUserKeys(); // refresh keys
     this.loadRecipes(); // reload as guest
   }
   // Add inside HomeComponent class

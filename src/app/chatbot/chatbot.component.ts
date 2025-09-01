@@ -31,7 +31,7 @@ export class ChatbotComponent implements AfterViewChecked {
 
   
   loadRecipes() {
-    this.http.get<any[]>('http://localhost:3000/foods').subscribe(data => {
+    this.http.get<any[]>('http://localhost:2661/foods').subscribe(data => {
       this.allRecipes = data;
     });
   }

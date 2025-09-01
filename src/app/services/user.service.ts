@@ -50,7 +50,6 @@ export class UserService {
 
     if (foundUser) {
       localStorage.setItem('loggedInUser', JSON.stringify(foundUser));
-      this.recipeService.refreshUserKeys(); // Load correct saved/fav
       return true;
     }
 
@@ -82,14 +81,13 @@ export class UserService {
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
     localStorage.setItem('loggedInUser', JSON.stringify(newUser));
-    this.recipeService.refreshUserKeys();
     return true;
   }
 
   logout() {
     if (typeof window !== 'undefined') {
       localStorage.removeItem('loggedInUser');
-      this.recipeService.clearAll(); // reset saved/fav
+      // RecipeService auto-switches context on next access
     }
   }
 

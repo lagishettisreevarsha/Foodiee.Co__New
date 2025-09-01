@@ -1,0 +1,34 @@
+<div class="explore-wrap">
+  <h1>Explore All Recipes</h1>
+
+  <div class="explore-grid" *ngIf="!isLoading; else loading">
+    <div class="card" *ngFor="let item of items" (click)="openDetail(item.id)">
+      <div class="img-wrap">
+        <img [src]="item.image" [alt]="item.title" loading="lazy" />
+        <span class="badge" *ngIf="item.category">{{ item.category }}</span>
+      </div>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description?.split('\n')[0] }}</p>
+      <div class="actions">
+        <button class="icon-btn save" [class.active]="isSaved(item.id)" (click)="$event.stopPropagation(); toggleSave(item.id)">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span>{{ isSaved(item.id) ? 'Saved' : 'Save' }}</span>
+        </button>
+        <button class="icon-btn fav" [class.active]="isFavorited(item.id)" (click)="$event.stopPropagation(); toggleFavorite(item.id)">
+          <svg class="icon heart" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+          <span>{{ isFavorited(item.id) ? 'Favourited' : 'Favourite' }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <ng-template #loading>
+    <div class="loading">Loading recipes…</div>
+  </ng-template>
+</div>

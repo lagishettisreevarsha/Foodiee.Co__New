@@ -27,16 +27,16 @@
     <!-- Typeahead suggestions -->
     <ul class="suggestions" *ngIf="suggestions.length">
       <li *ngFor="let s of suggestions" (mousedown)="selectSuggestion(s)">
-        <img [src]="s.image" alt="" />
         <span>{{ s.title }}</span>
       </li>
     </ul>
-    <button class="scroll-hint" (click)="scrollToCards()" aria-label="Scroll to recipes">Explore More Recipes</button>
+    <button class="scroll-hint" (click)="goToExplore()" aria-label="Explore all recipes">Explore More Recipes</button>
   </div>
   <div class="hero-gradient"></div>
 </div>
 
 <!-- Main Content -->
+<div class="section-divider" aria-hidden="true"></div>
 <div class="home-container">
   <div class="home-content">
     <div #cardsTop class="cards-anchor"></div>
@@ -59,7 +59,7 @@
 
     <!-- Food Cards -->
     <div class="food-grid" *ngIf="!isLoading; else skeletons">
-      <div class="food-card" *ngFor="let item of filteredItems()" (click)="goToFoodDetail(item.id)">
+      <div class="food-card" *ngFor="let item of paginatedItems()" (click)="goToFoodDetail(item.id)">
         <div class="card-image-wrapper">
           <img [src]="item.image" alt="{{ item.title }}" loading="lazy" />
           <span class="category-badge" *ngIf="item.category">{{ item.category }}</span>
@@ -68,17 +68,40 @@
         <p>{{ item.description.split('\n')[0] }}</p>
 
         <div class="card-actions">
-          <button (click)="toggleSave(item.id); $event.stopPropagation()">
-            {{ isSaved(item.id) ? '💾 Saved' : '💾 Save' }}
+          <button class="icon-btn save" [class.active]="isSaved(item.id)" (click)="toggleSave(item.id); $event.stopPropagation()" aria-label="Save recipe">
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>{{ isSaved(item.id) ? 'Saved' : 'Save' }}</span>
           </button>
-          <button (click)="toggleFavorite(item.id); $event.stopPropagation()">
-            {{ isFavorited(item.id) ? '❤️ Favourited' : '🤍 Favourite' }}
+          <button class="icon-btn fav" [class.active]="isFavorited(item.id)" (click)="toggleFavorite(item.id); $event.stopPropagation()" aria-label="Favourite recipe">
+            <svg class="icon heart" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <span>{{ isFavorited(item.id) ? 'Favourited' : 'Favourite' }}</span>
           </button>
-          <button *ngIf="isUploadedRecipe(item.id)" (click)="deleteRecipe(item.id); $event.stopPropagation()" class="delete-btn">
-            🗑️ Delete
+          <button *ngIf="isUploadedRecipe(item.id)" (click)="deleteRecipe(item.id); $event.stopPropagation()" class="delete-btn" aria-label="Delete recipe">
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              <line x1="10" y1="11" x2="10" y2="17"></line>
+              <line x1="14" y1="11" x2="14" y2="17"></line>
+            </svg>
+            <span>Delete</span>
           </button>
         </div>
       </div>
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination" *ngIf="!isLoading && totalPages > 1">
+      <button class="page-btn prev" [disabled]="currentPage === 1" (click)="prevPage()">Previous</button>
+      <button
+        class="page-number"
+        *ngFor="let p of pageNumbers"
+        [ngClass]="{ active: p === currentPage }"
+        (click)="goToPage(p)">{{ p }}</button>
+      <button class="page-btn next" [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
     </div>
 
     <ng-template #skeletons>

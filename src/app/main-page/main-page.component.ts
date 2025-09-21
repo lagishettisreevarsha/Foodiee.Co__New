@@ -240,6 +240,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
     }
   }
 
+
   navigateHome() {
     this.router.navigate(['/']);
   }

@@ -18,8 +18,7 @@
 
   <div *ngIf="!showLogin && !showSignup" class="intro-text">
     <h1>🍳 Welcome to Foodiee.co</h1>
-    <p>Discover mouthwatering dishes, cooking secrets, and culinary inspiration.<br />
-      Join now to save recipes, share your own, and explore food like never before.</p>
+    <p>Discover mouthwatering dishes, cooking secrets, and culinary inspiration.</p>
   </div>
 
   <div class="auth-box" *ngIf="showLogin || showSignup">
@@ -36,7 +35,7 @@
     <!-- Enhanced Compact Signup Form -->
     <form *ngIf="!isLoginMode" (ngSubmit)="onSubmit()" class="signup-form">
       <div class="form-row">
-        <input type="text" [(ngModel)]="firstName" name="firstName" placeholder="👤 First Name" required autocomplete="given-name" />
+        <input type="text" [(ngModel)]="firstName" name="firstName" placeholder="👤 Name" required autocomplete="given-name" />
         <input type="text" [(ngModel)]="lastName" name="lastName" placeholder="👤 Last Name" required autocomplete="family-name" />
       </div>
       

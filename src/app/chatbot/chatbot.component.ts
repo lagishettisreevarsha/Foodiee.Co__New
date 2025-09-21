@@ -1,17 +1,18 @@
-import { Component, ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, ElementRef, ViewChild, AfterViewChecked, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { FoodService } from '../services/food.service';
 
 @Component({
   selector: 'app-chatbot',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './chatbot.component.html',
-  styleUrls: ['./chatbot.component.css']
+  styleUrls: ['./chatbot.component.css'],
+  providers: [FoodService]
 })
-export class ChatbotComponent implements AfterViewChecked {
+export class ChatbotComponent implements AfterViewChecked, OnInit {
   isTyping = false;
   userInput = '';
   messages: { text: string; sender: 'user' | 'bot' }[] = [];
@@ -19,7 +20,12 @@ export class ChatbotComponent implements AfterViewChecked {
 
   @ViewChild('chatEnd') chatEnd!: ElementRef;
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(
+    private router: Router,
+    private foodService: FoodService
+  ) {}
+
+  ngOnInit(): void {
     this.loadRecipes();
   }
 
@@ -31,8 +37,18 @@ export class ChatbotComponent implements AfterViewChecked {
 
   
   loadRecipes() {
-    this.http.get<any[]>('http://localhost:2661/foods').subscribe(data => {
-      this.allRecipes = data;
+    this.foodService.getAllRecipes().subscribe({
+      next: (data) => {
+        this.allRecipes = data || [];
+      },
+      error: (error) => {
+        console.error('Error loading recipes:', error);
+        this.messages.push({ 
+          text: 'Sorry, I had trouble loading recipes. Please try again later.', 
+          sender: 'bot' 
+        });
+        this.allRecipes = [];
+      }
     });
   }
 

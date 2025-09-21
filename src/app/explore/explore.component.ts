@@ -44,4 +44,4 @@ export class ExploreComponent implements OnInit {
   isUploadedRecipe(id: number) { return this.recipes.isUploadedRecipe(id); }
 
   openDetail(id: number) { this.router.navigate(['/food', id]); }
-}
+}0

@@ -1,4 +1,10 @@
 <div class="explore-wrap">
+  <button type="button" (click)="goBack()" aria-label="Go back" class="back-btn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+    <span>Back</span>
+  </button>
   <h1>Explore All Recipes</h1>
 
   <div class="explore-grid" *ngIf="!isLoading; else loading">

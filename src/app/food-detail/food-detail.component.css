@@ -8,7 +8,7 @@
   padding: 40px 20px;
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
-  color: #3a1e0d;
+  color: var(--text);
 }
 
 /* ---------------- Navbar: Slide-in from Top ---------------- */
@@ -67,7 +67,8 @@
 .food-detail-container {
   max-width: 1100px;
   margin: 80px auto 40px;
-  background: rgba(255,255,255,0.95);
+  background: var(--card-bg);
+  color: var(--text);
   backdrop-filter: blur(12px);
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.15);
@@ -75,7 +76,7 @@
   opacity: 0;
   transform: translateY(50px);
   animation: cardSlideUp 0.75s cubic-bezier(.41,1.3,.51,.95) 0.34s forwards;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid var(--border);
 }
 @keyframes cardSlideUp {
   to {
@@ -121,20 +122,20 @@
 
 /* ---------------- Back Button ---------------- */
 .back-btn {
-  background-color: #ffe6de;
-  color: #ff5722;
+  background-color: var(--accent);
+  color: var(--accent-contrast);
   border: none;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   margin-bottom: 28px;
-  box-shadow: 0 3px 8px rgba(255,87,34,0.10);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.10);
   transition: background 0.2s;
 }
 .back-btn:hover,
 .back-btn:focus {
-  background-color: #ffccbc;
+  background-color: var(--accent-hover);
   outline: none;
 }
 
@@ -155,7 +156,7 @@
   width: 100%;
   border-radius: 14px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  background: rgba(255,255,255,0.10);
+  background: var(--card-bg);
   transition: box-shadow 0.2s, filter 0.2s;
 }
 .food-video:hover,
@@ -172,7 +173,7 @@
   padding-top: 56.25%; /* 16:9 */
   border-radius: 14px;
   overflow: hidden;
-  background: rgba(255,255,255,0.10);
+  background: var(--card-bg);
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
   transition: box-shadow 0.2s, filter 0.2s;
 }
@@ -248,12 +249,12 @@
 .rating-meta {
   margin-top: 6px;
   font-size: 13px;
-  color: #555;
+  color: var(--muted-text);
   display: flex;
   gap: 8px;
   align-items: center;
 }
-.rating-meta .avg { font-weight: 700; color: #ff7043; }
+.rating-meta .avg { font-weight: 700; color: var(--accent); }
 .rating-meta .you { color: #666; }
 
 /* Share buttons */
@@ -290,28 +291,6 @@
   list-style-position: inside;
 }
 
-.ingredients li {
-  font-size: 16px;
-  margin-bottom: 8px;
-  color: #444;
-  line-height: 1.5;
-  cursor: default;
-  opacity: 0;
-  transform: translateY(18px);
-  animation: ingredientGrowIn 0.48s cubic-bezier(.23,.86,.35,1.20) both;
-  /* stagger: automatically based on index if using Angular ngFor index */
-  animation-delay: calc(0.48s + 0.07s * var(--i, 0));
-  transition: color 0.16s;
-}
-@keyframes ingredientGrowIn {
-  to { opacity: 1; transform: none;}
-}
-
-.ingredients li:hover {
-  color: #ff7043;
-  font-weight: 600;
-}
-
 /* For Angular/EJS/React: set style="--i:INDEX" on each <li> for stagger! */
 
 /* ---------------- Cooking Steps ---------------- */
@@ -328,7 +307,7 @@
 .description h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #ff5722;
+  color: var(--accent);
   margin-bottom: 14px;
   letter-spacing: 0.02em;
   text-shadow: 0 1px 6px #ffd4bd19;
@@ -336,7 +315,7 @@
 .description p {
   font-size: 16px;
   line-height: 1.7;
-  color: #333;
+  color: var(--text);
   white-space: pre-line;
 }
 
@@ -357,4 +336,15 @@
   .info-column h2 { font-size: 19px; }
   .ingredients h3, .description h3 { font-size: 15px; }
   .ingredients li, .description p { font-size: 12.5px; }
+}
+
+/* ------- Dark theme overrides ------- */
+body.dark-theme .detail-page {
+  background: var(--bg);
+  background-attachment: scroll;
+}
+body.dark-theme .food-detail-container {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
 }

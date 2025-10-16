@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RecipeService } from '../services/recipe.service';
 import { FoodService } from '../services/food.service';
@@ -17,7 +17,7 @@ export class SavedComponent implements OnInit {
   savedItems: any[] = [];
 
   private sub?: Subscription;
-  constructor(private foodService: FoodService, private recipeService: RecipeService) {}
+  constructor(private foodService: FoodService, private recipeService: RecipeService, private location: Location) {}
 
   ngOnInit(): void {
     this.foodService.getFoods().subscribe({
@@ -37,5 +37,9 @@ export class SavedComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

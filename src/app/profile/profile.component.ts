@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   isEditing = false;
   editUser: any = {};
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router, private location: Location) {}
 
   ngOnInit(): void {
     this.user = this.userService.getUser();
@@ -63,5 +63,9 @@ export class ProfileComponent implements OnInit {
   removeProfilePic() {
     this.user.profilePic = null;
     this.userService.updateUser(this.user);
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

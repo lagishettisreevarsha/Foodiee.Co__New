@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
+
 import { Router } from '@angular/router';
 import { RecipeService } from '../services/recipe.service';
 
@@ -14,7 +15,7 @@ export class ExploreComponent implements OnInit {
   isLoading = true;
   items: any[] = [];
 
-  constructor(private recipes: RecipeService, private router: Router) {}
+  constructor(private recipes: RecipeService, private router: Router, private location: Location) {}
 
   ngOnInit(): void {
     this.load();
@@ -44,4 +45,6 @@ export class ExploreComponent implements OnInit {
   isUploadedRecipe(id: number) { return this.recipes.isUploadedRecipe(id); }
 
   openDetail(id: number) { this.router.navigate(['/food', id]); }
-}0
+
+  goBack() { this.location.back(); }
+}

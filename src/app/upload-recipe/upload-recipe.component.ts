@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RecipeService } from '../services/recipe.service';
@@ -23,7 +23,8 @@ export class UploadRecipeComponent {
   constructor(
     private recipeService: RecipeService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) {}
 
   onSubmit() {
@@ -45,5 +46,9 @@ export class UploadRecipeComponent {
 
     this.recipeService.saveUploadedRecipe(newRecipe);
     this.router.navigate(['/home']);
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

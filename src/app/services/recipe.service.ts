@@ -75,6 +75,16 @@ export class RecipeService {
     }
   }
 
+  private getCurrentUserEmail(): string {
+    if (typeof window === 'undefined') return 'guest';
+    try {
+      const user = JSON.parse(localStorage.getItem('loggedInUser') || 'null');
+      return user?.email || 'guest';
+    } catch {
+      return 'guest';
+    }
+  }
+
   private get savedKey(): string {
     return `savedItems_${this.currentUserId || 'guest'}`;
   }
@@ -185,14 +195,17 @@ export class RecipeService {
   saveUploadedRecipe(recipe: any) {
     if (typeof window !== 'undefined') {
       const existing = JSON.parse(localStorage.getItem('uploadedRecipes') || '[]');
-      existing.push(recipe);
+      const ownerEmail = this.getCurrentUserEmail();
+      const enriched = { ...recipe, ownerEmail };
+      existing.push(enriched);
       localStorage.setItem('uploadedRecipes', JSON.stringify(existing));
     }
   }
 
   deleteUploadedRecipe(id: number): void {
     if (typeof window !== 'undefined') {
-      const recipes = this.getUploadedRecipes().filter(recipe => recipe.id !== id);
+      const ownerEmail = this.getCurrentUserEmail();
+      const recipes = this.getUploadedRecipes().filter((recipe: any) => !(recipe.id === id && recipe.ownerEmail === ownerEmail));
       localStorage.setItem('uploadedRecipes', JSON.stringify(recipes));
     }
   }
@@ -200,6 +213,15 @@ export class RecipeService {
   isUploadedRecipe(id: number): boolean {
     if (typeof window !== 'undefined') {
       return this.getUploadedRecipes().some(recipe => recipe.id === id);
+    }
+    return false;
+  }
+
+  // Only recipes uploaded by the logged-in user
+  isOwnedUploadedRecipe(id: number): boolean {
+    if (typeof window !== 'undefined') {
+      const ownerEmail = this.getCurrentUserEmail();
+      return this.getUploadedRecipes().some((recipe: any) => recipe.id === id && recipe.ownerEmail === ownerEmail);
     }
     return false;
   }

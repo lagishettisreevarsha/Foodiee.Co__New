@@ -9,6 +9,18 @@
   --accent-contrast: #ffffff;
   --muted: #f7f7f7;
   --muted-text: #666666;
+
+  /* Breakpoints */
+  --bp-sm: 480px;
+  --bp-md: 600px;
+  --bp-lg: 768px;
+  --bp-xl: 992px;
+
+  /* Fluid spacing */
+  --space-1: clamp(6px, 1.2vw, 10px);
+  --space-2: clamp(10px, 1.8vw, 14px);
+  --space-3: clamp(14px, 2.4vw, 18px);
+  --space-4: clamp(18px, 3vw, 24px);
 }
 
 body.dark-theme {
@@ -26,4 +38,26 @@ body.dark-theme {
 html, body {
   background: var(--bg);
   color: var(--text);
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
+
+app-root { display: block; min-height: 100%; }
+
+/* Fluid media */
+img, video { max-width: 100%; height: auto; display: block; }
+
+/* Responsive grid utility */
+.resp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(var(--min, 240px), 1fr)); gap: var(--gap, 1rem); }
+
+/* Visibility helpers */
+@media (max-width: 600px) { .hide-sm { display: none !important; } }
+@media (min-width: 601px) { .show-sm-only { display: none !important; } }
+
+/* Container utility */
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding-left: var(--space-3); padding-right: var(--space-3); }
+
+/* Fluid headings (opt-in via class) */
+.fluid-title { font-size: clamp(1.25rem, 3.5vw, 2rem); line-height: 1.2; }
+.fluid-subtitle { font-size: clamp(1rem, 2.8vw, 1.25rem); line-height: 1.35; }

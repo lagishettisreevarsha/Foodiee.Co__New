@@ -694,6 +694,7 @@
   .home-container {
     padding: 1.5rem;
   }
+  .home-navbar { padding: 0.75rem 1rem; }
   .food-grid {
     gap: 1rem;
   }
@@ -712,6 +713,7 @@
   .ingredients ul {
     max-width: 100%;
   }
+  .home-navbar { padding: 0.6rem 0.9rem; }
 }
 @media (max-width: 600px) {
   .food-card img {
@@ -724,6 +726,28 @@
     font-size: 1.3rem;
     padding: 6px;
   }
+  /* Stack search input and buttons to avoid overflow on mobile */
+  .hero-cta { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+    width: 100%; 
+    max-width: 520px;
+  }
+  .hero-cta input { width: 100%; }
+  .hero-cta button { width: 100%; }
+  /* Constrain suggestions under hero for small screens */
+  .suggestions { width: 100%; max-width: 520px; margin: 8px auto 0; }
+  /* Wrap navbar content for very small screens */
+  .home-navbar { 
+    padding: 0.6rem 0.75rem; 
+    flex-wrap: wrap; 
+    row-gap: 8px; 
+    column-gap: 8px;
+    justify-content: center;
+  }
+  .nav-actions { gap: 0.6rem; }
+  .hero { height: 56vh; min-height: 320px; }
 }
 @media (max-width: 480px) {
   .home-container {
@@ -741,4 +765,5 @@
     height: 44px;
     font-size: 18px;
   }
+  .home-navbar { padding: 0.5rem 0.6rem; }
 }

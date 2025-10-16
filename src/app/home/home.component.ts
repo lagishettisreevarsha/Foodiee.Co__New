@@ -266,6 +266,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.loadRecipes(); // Refresh list after deletion
   }
 
+  // Show delete only for recipes uploaded by the current user
+  isOwnedUploadedRecipe(id: number): boolean {
+    return this.recipeService.isOwnedUploadedRecipe(id);
+  }
+
   // Theme toggle (dark/light) persisted in localStorage
   toggleTheme() {
     const body = document.body;

@@ -3,7 +3,7 @@
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  color: #ff7a00;
+  color: var(--text);
   margin: 2rem 0 1rem;
   font-family: Arial, sans-serif;
   letter-spacing: 0.5px;
@@ -11,6 +11,24 @@
   transform: translateY(-16px);
   animation: fadeDown 0.7s cubic-bezier(.36,1.2,.48,.92) 0.1s forwards;
 }
+
+/* Themed Back Button */
+.back-btn {
+  background: linear-gradient(135deg, #ff7a00 0%, #ff944d 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(255, 122, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  margin: 0.5rem 1rem;
+}
+
+.back-btn:hover { transform: translateY(-1px); box-shadow: 0 5px 18px rgba(255, 122, 0, 0.4); }
+.back-btn:active { transform: translateY(0); }
 
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-16px);}
@@ -29,8 +47,8 @@
 
 /* Each food card - animated entrance */
 .food-card {
-  background: #fff;
-  border: 2px solid #ff7a00;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
@@ -73,12 +91,12 @@
 /* Card title and excerpt */
 .food-card h3 {
   font-size: 1.18rem;
-  color: #333;
+  color: var(--text);
   margin: 0.8rem 0 0.4rem;
 }
 .food-card p {
   font-size: 0.95rem;
-  color: #0a0a0a;
+  color: var(--muted-text);
   padding: 0 1rem 1rem;
 }
 

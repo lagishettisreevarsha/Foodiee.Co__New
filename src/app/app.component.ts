@@ -15,6 +15,15 @@ export class AppComponent implements OnInit{
   constructor(private userService: UserService) {}
   ngOnInit(): void {
     this.user = this.userService.getUser();
+    // Apply saved theme globally on app bootstrap
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        document.body.classList.add('dark-theme');
+      } else {
+        document.body.classList.remove('dark-theme');
+      }
+    } catch {}
   }
   title = 'Foodiee.co';
   logout() {

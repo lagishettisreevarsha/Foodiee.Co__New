@@ -93,24 +93,32 @@ export class UserService {
 
   getUser() {
     if (typeof window === 'undefined') return {};
-    return JSON.parse(localStorage.getItem('loggedInUser') || '{}');
+    const logged = JSON.parse(localStorage.getItem('loggedInUser') || '{}');
+    const email = logged?.email;
+    if (!email) return logged || {};
+    // Hydrate from users[] so profile persists across API logins
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const full = users.find((u: any) => u.email === email);
+    return full ? { ...logged, ...full } : logged;
   }
 
-  // Update user in localStorage
-  updateUser(updatedUser: any): void {
+  // Update user in localStorage (supports email change)
+  updateUser(updatedUser: any, previousEmail?: string): void {
     if (typeof window === 'undefined') return;
     
-    // Update logged in user
+    // Update logged in user immediately
     localStorage.setItem('loggedInUser', JSON.stringify(updatedUser));
     
-    // Update in users array
+    // Upsert into users array using previous email if provided
     const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const userIndex = users.findIndex((u: any) => u.email === updatedUser.email);
-    
-    if (userIndex !== -1) {
-      users[userIndex] = updatedUser;
-      localStorage.setItem('users', JSON.stringify(users));
+    const keyEmail = previousEmail || updatedUser.email;
+    const idx = users.findIndex((u: any) => u.email === keyEmail);
+    if (idx !== -1) {
+      users[idx] = { ...users[idx], ...updatedUser };
+    } else {
+      users.push(updatedUser);
     }
+    localStorage.setItem('users', JSON.stringify(users));
   }
 
   isLoggedIn(): boolean {

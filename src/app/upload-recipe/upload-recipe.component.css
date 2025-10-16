@@ -3,17 +3,37 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #ffecd2, #fcb69f);
+  background: var(--bg);
   padding: 40px 20px;
 }
 
+/* Themed Back Button */
+.back-btn {
+  background: linear-gradient(135deg, #ff7a00 0%, #ff944d 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(255, 122, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  margin: 1rem;
+}
+
+.back-btn:hover { transform: translateY(-1px); box-shadow: 0 5px 18px rgba(255, 122, 0, 0.4); }
+.back-btn:active { transform: translateY(0); }
+
 .upload-card {
-  background-color: #fff;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
   padding: 30px;
   border-radius: 18px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   max-width: 600px;
   width: 100%;
+  color: var(--text);
 }
 
 .upload-title {
@@ -21,7 +41,7 @@
   font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
-  color: #333;
+  color: var(--text);
 }
 
 form input,
@@ -29,10 +49,11 @@ form textarea {
   width: 100%;
   padding: 12px 15px;
   margin: 12px 0;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   border-radius: 10px;
   font-size: 16px;
-  background-color: #fafafa;
+  background-color: var(--card-bg);
+  color: var(--text);
 }
 
 form textarea {
@@ -43,8 +64,8 @@ form textarea {
 button[type='submit'] {
   width: 100%;
   padding: 14px;
-  background-color: #ff7e5f;
-  color: white;
+  background-color: var(--accent);
+  color: var(--accent-contrast);
   font-size: 18px;
   font-weight: 600;
   border: none;
@@ -55,14 +76,27 @@ button[type='submit'] {
 }
 
 button[type='submit']:hover {
-  background-color: #eb5e3b;
+  background-color: var(--accent-hover);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .upload-container { padding: 20px 12px; }
+  .upload-card { max-width: 92vw; padding: 18px; border-radius: 14px; }
+  .upload-title { font-size: 20px; margin-bottom: 14px; }
+  form input, form textarea { font-size: 14px; padding: 10px 12px; margin: 10px 0; }
+  button[type='submit'] { font-size: 16px; padding: 12px; }
 }
 
 .error-message {
   color: #d8000c;
-  background-color: #ffd2d2;
+  background-color: color-mix(in oklab, #ffd2d2 70%, var(--card-bg));
   padding: 10px;
   margin-top: 10px;
   border-radius: 8px;
   text-align: center;
 }
+
+/* Dark theme explicit overrides (if any component uses fixed colors elsewhere) */
+body.dark-theme .upload-container { background: var(--bg); }
+body.dark-theme .upload-card { background: var(--card-bg); border: 1px solid var(--border); }
